@@ -12,11 +12,17 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "electron": "electron .",
-    "electron-build": "ng build && electron .",
+    "electron-build": "ng build --prod && electron .",
     "dist": "electron-builder --linux"
   },
   "build": {
     "appId": "hr.creaticon.eatodo",
+    "files": [
+      "**"
+    ],
+    "directories": {
+      "buildResources": "."
+    },
     "linux": {
       "target": "deb"
     }
