@@ -1,13 +1,25 @@
 {
   "name": "quickstart",
   "version": "0.0.0",
+  "description": "Simple TODO application built with Electron and AngularJS.",
+  "author": "Vjekoslav Ratkajec <vjeko@creaticon.hr>",
+  "main": "main.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "electron": "electron .",
+    "electron-build": "ng build && electron .",
+    "dist": "electron-builder --linux"
+  },
+  "build": {
+    "appId": "hr.creaticon.eatodo",
+    "linux": {
+      "target": "deb"
+    }
   },
   "private": true,
   "dependencies": {
@@ -33,6 +45,8 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.2.1",
+    "electron": "^2.0.7",
+    "electron-builder": "^20.28.2",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~1.7.1",
