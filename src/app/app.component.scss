@@ -20,6 +20,7 @@ $unit-of-speed: 50ms; // normal
   border-right: 1px solid rgba(0, 0, 0, 0.5);
   border-left: 1px solid rgba(255, 255, 255, 0.05);
   padding: 0 0.2em;
+  font-size : 6em;
   &:first-child {
     border-left: none;
   }
@@ -36,8 +37,8 @@ $unit-of-speed: 50ms; // normal
 }
 
 .odometer {
-  height: 1em;
-  
+  height: 6em;
+  box-sizing: initial;
   @include odometer-styling();
 }
 
@@ -52,11 +53,11 @@ $unit-of-speed: 50ms; // normal
 
 .digit-container {
   line-height: 1em;
-  @include animation(slide 5s ease-in-out);
+  @include animation(slide infinite linear);
 }
 
 .digit-one {
-  @include animation-duration(10 * $unit-of-speed);
+  @include animation-duration(9 * $unit-of-speed);
 }
 
 .digit-ten {
@@ -64,7 +65,7 @@ $unit-of-speed: 50ms; // normal
 }
 
 .digit-hundred {
-  @include animation-duration(10 * $unit-of-speed);
+  @include animation-duration(11 * $unit-of-speed);
 }
 
 @-webkit-keyframes slide {
