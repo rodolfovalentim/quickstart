@@ -19,7 +19,7 @@ $unit-of-speed: 50ms; // normal
 @mixin digit-styling() {
   border-right: 1px solid rgba(0, 0, 0, 0.5);
   border-left: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 0 0.2em;
+  padding: 0 0.7em;
   font-size : 6em;
   &:first-child {
     border-left: none;
@@ -53,19 +53,19 @@ $unit-of-speed: 50ms; // normal
 
 .digit-container {
   line-height: 1em;
-  @include animation(slide infinite linear);
+  @include animation(slide 3 linear);
 }
 
 .digit-one {
-  @include animation-duration(9 * $unit-of-speed);
-}
-
-.digit-ten {
   @include animation-duration(10 * $unit-of-speed);
 }
 
+.digit-ten {
+  @include animation-duration(15 * $unit-of-speed);
+}
+
 .digit-hundred {
-  @include animation-duration(11 * $unit-of-speed);
+  @include animation-duration(20 * $unit-of-speed);
 }
 
 @-webkit-keyframes slide {
