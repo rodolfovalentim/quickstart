@@ -9,7 +9,7 @@ $unit-of-speed: 50ms; // normal
   @include text-shadow(0 -1px rgba(0, 0, 
     0, 0.9));
   color: rgba(255, 255, 255, 0.9);
-  margin: 2em auto;
+  margin: 0em auto;
   display: inline-block;
   background: #222;
   @include border-radius(2px);
@@ -37,23 +37,23 @@ $unit-of-speed: 50ms; // normal
 }
 
 .odometer {
-  height: 6em;
+  height: 9em;
   box-sizing: initial;
   @include odometer-styling();
 }
 
 .digit {
   display: inline-block;
-  height: 1em;
-  width: 0.59em;
+  height: 1.5em;
+  width: 1.5em;
   overflow: hidden;
   
   @include digit-styling();
 }
 
 .digit-container {
-  line-height: 1em;
-  @include animation(slide 3 linear);
+  line-height: 0.9em;
+  @include animation(slide 10 linear);
 }
 
 .digit-one {
@@ -70,7 +70,7 @@ $unit-of-speed: 50ms; // normal
 
 @-webkit-keyframes slide {
   from {
-    -webkit-transform: translateY(-10em);
+    -webkit-transform: translateY(-3em);
   }
 
   to {
@@ -79,7 +79,7 @@ $unit-of-speed: 50ms; // normal
 }
 @keyframes slide {
   from {
-    transform: translateY(-10em);
+    transform: translateY(-3em);
   }
 
   to {
@@ -87,8 +87,31 @@ $unit-of-speed: 50ms; // normal
   }
 }
 
-body {
-  font-size: 92px;
-  background: #333;
-  text-align: center;
+body > .container {
+  padding: 60px 15px 0;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+.header {
+  height: 400px;
+}
+
+img {
+  max-width: 100%; 
+  max-height: 100%;
 }
