@@ -2,7 +2,7 @@
 @import '~compass-mixins/lib/compass/css3';
 
 // $unit-of-speed: 50ms; // crazy fast
-$unit-of-speed: 50ms; // normal
+$unit-of-speed: 10ms; // normal
 // $unit-of-speed: 1000ms; // boring
 
 @mixin odometer-styling () {
@@ -37,14 +37,14 @@ $unit-of-speed: 50ms; // normal
 }
 
 .odometer {
-  height: 9em;
+  height: 6em;
   box-sizing: initial;
   @include odometer-styling();
 }
 
 .digit {
   display: inline-block;
-  height: 1.5em;
+  height: 1em;
   width: 1.5em;
   overflow: hidden;
   
@@ -53,7 +53,7 @@ $unit-of-speed: 50ms; // normal
 
 .digit-container {
   line-height: 0.9em;
-  @include animation(slide 10 linear);
+  @include animation(slide 10 ease-out);
 }
 
 .digit-one {
