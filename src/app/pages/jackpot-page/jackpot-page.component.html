@@ -1,0 +1,27 @@
+<div class="container content"> <!-- container centers content on large screens -->
+  <div class="row">             <!-- responsive row has 12 columns by default -->
+      <div class="odometer">
+        <div class="digit">
+          <div class="digit-container digit-hundred">
+              <div *ngFor="let hero of images">
+                  <img src={{hero}} />
+              </div>
+          </div>
+        </div>
+        <div class="digit">
+          <div class="digit-container digit-ten">
+            <div *ngFor="let hero of images">
+                <img src={{hero}} />
+              </div>
+          </div>
+        </div>
+        <div class="digit">
+          <div class="digit-container digit-one">
+            <div *ngFor="let hero of images">
+                <img src={{hero}} />
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

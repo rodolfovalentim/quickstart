@@ -1,0 +1,23 @@
+<div class="hgroup">
+    <img id="product-logo" src="assets/images/golden-logo.png">
+</div>
+
+<mat-card style="margin:auto;width: 600px;">
+  <div class="example-container">
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput [(ngModel)]="email">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" [(ngModel)]="password">
+    </mat-form-field>
+    
+    <button mat-raised-button color="warn" type="submit" class="btn btn-primary" (click)="tryLogin()">Login</button>
+  </div>
+</mat-card>
+
+<footer class="footer">
+  <img id="company-logo" src="assets/images/hardcode-logo.png">
+</footer>
