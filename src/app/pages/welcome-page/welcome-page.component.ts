@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Component, OnInit, AfterViewInit, ElementRef} from '@angular/core';
 
 @Component({
   selector: 'app-welcome-page',
@@ -19,6 +19,6 @@ export class WelcomePageComponent implements OnInit {
   }
 
   ngOnInit() {
-  }
 
+  }
 }

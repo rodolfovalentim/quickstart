@@ -4,12 +4,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule }   from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'; 
 import { WebcamModule } from 'ngx-webcam';
+import { IKeyboardLayouts, keyboardLayouts, MAT_KEYBOARD_LAYOUTS, MatKeyboardModule } from '@ngx-material-keyboard/core';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatRadioModule } from '@angular/material/radio';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
@@ -24,6 +27,23 @@ import { QuizPageComponent } from './pages/quiz-page/quiz-page.component';
 import { WelcomePageComponent } from './pages/welcome-page/welcome-page.component';
 
 import { AuthGuardService } from './auth.guard';
+import { ConfigComponent } from './components/config/config.component';
+
+const customLayouts: IKeyboardLayouts = {
+  ...keyboardLayouts,
+  'Tölles Läyout': {
+    'name': 'Awesome layout',
+    'keys': [
+      [
+        ['1', '!'],
+        ['2', '@'],
+        ['3', '#']  
+      ]
+    ],
+    'lang': ['de-CH']
+  }
+};
+
 
 @NgModule({
   declarations: [
@@ -35,7 +55,8 @@ import { AuthGuardService } from './auth.guard';
     PhotoPageComponent,
     DashboardPageComponent,
     QuizPageComponent,
-    WelcomePageComponent
+    WelcomePageComponent,
+    ConfigComponent
   ],
   imports: [
     BrowserModule,
@@ -47,10 +68,13 @@ import { AuthGuardService } from './auth.guard';
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatRadioModule,
     HttpClientModule,
-    WebcamModule
+    WebcamModule,
+    MatKeyboardModule,
+    MatStepperModule  
   ],
-  providers: [ AuthGuardService ],
-  bootstrap: [AppComponent]
+  providers: [ AuthGuardService, {provide: MAT_KEYBOARD_LAYOUTS, useValue: customLayouts} ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule {}

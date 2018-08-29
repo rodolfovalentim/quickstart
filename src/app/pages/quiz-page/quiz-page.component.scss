@@ -1,0 +1,68 @@
+button {
+    width: inherit;
+}
+
+.container {
+    margin-top: 10px;
+}
+
+mat-card {
+    margin: 10px;
+}
+
+/* HEADER */
+.logo{
+    margin-top: 40px;
+    width: 70%;
+}
+.event-name{
+    color: white;
+    margin-top: 50px
+}
+
+.quiz-text{
+    margin: 20px; color: #254c6f
+}
+.quiz-text, h2{
+    margin-bottom: 20px
+}
+.quiz-text, p{
+    font-size: large
+}
+.quiz-question-title{
+    margin-bottom: 20px
+}
+
+.outcome-quiz-text{
+    margin: 20px; color: #254c6f; text-align: center;
+}
+.take-picture-button{
+    margin-top:20px; background-color: #f7941e; color: white
+}
+.try-again-buttons{
+    margin-top:20px
+}
+
+.answer{
+    background-color: lightgray;
+    margin:  10px 10px 0px 10px;
+    padding: 10px;    
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px #888888;
+}
+.answer:hover{
+    cursor: pointer;
+}
+.answer.selected{
+    background-color: #f7941e !important;
+    color: white;
+}
+
+.btn .btn-secondary .float-left{
+    display: none !important
+}
+
+.try-again{
+    margin-top:50px;
+    background-color: #f7941e; color: white
+}
