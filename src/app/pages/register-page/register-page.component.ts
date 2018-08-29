@@ -7,9 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterPageComponent implements OnInit {
 
+  name = '';
+  email = '';
+  place = '';
+  phone = '';
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  cancel() {
+
+  }
+  
+  register() {
+
+  }
+
+  jump() {
+
+  }
 }

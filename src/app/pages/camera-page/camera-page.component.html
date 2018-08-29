@@ -1,3 +1,72 @@
-<p>
-  camera-page works!
-</p>
+<div class="container">
+
+    <section class="demo">
+      <!-- <div class="row">
+        <div class="col text-center">
+            <img class="logo" src="../assets/images/logo.png">
+        </div>      
+      </div> -->
+  <!-- 
+      <div class="row">
+        <div class="col">
+          <h1 class="event-name">
+              Semana da Prudential do Brasil na Ourinvest
+          </h1>
+        </div>
+      </div> -->
+  
+      <div class="row">
+        
+        <div class="col-md-9 text-center" style="position: relative;">
+            <!-- <div class="animated flash picture-flash"
+              [hidden]="countdown != 0">
+            </div> -->
+            <div 
+              [hidden]="countdown == 0 || countdown == 4"
+              class="animated pulse infinite countdown">
+              {{countdown}}
+            </div>
+            <div
+              class="acknowledgment"            
+              [hidden]="countdown != 4">
+              <span class="animated fadeInDown">
+                  Obrigado por<br>Participar.                              
+              </span>            
+            </div>
+            <div
+              class="confirmation"            
+              [hidden]="confirm_picture == ''">
+              <img [src]="confirm_picture">
+            </div>
+            <div>
+              <img 
+              [hidden]="selectedFrame != 1"
+              class="frame"          
+              src="http://localhost:8080/agazeta/assets/images/frame-1.png">
+            </div>
+            
+            <img 
+              [hidden]="selectedFrame != 2"
+              class="frame"        
+              src="http://localhost:8080/agazeta/assets/images/frame-2.png">          
+            <webcam  (imageCapture)="handleImage($event)" [trigger]="triggerObservable" ></webcam>
+        </div>    
+        <div class="col-md-3">          
+          <!-- <img (click)="changeFrame(1)" class="picture-frame" src="../../assets/images/frame-1.png">
+          <img (click)="changeFrame(2)" class="picture-frame pull-right" src="../../assets/images/frame-2.png"> -->
+          <div class="take-picture" (click)="confirm_picture == '' ? triggerSnapshot() : printPicture()">
+              <i [hidden]="confirm_picture != ''" class="fas fa-camera"></i>
+              <i [hidden]="confirm_picture == ''" class="fas fa-check"></i>
+               {{confirm_picture == '' ? 'TIRAR FOTO' : 'SALVAR'}}
+          </div>
+          <div [hidden]="confirm_picture == ''" class="take-picture-back" (click)="triggerSnapshot();">
+              <i class="fas fa-camera"></i> TIRAR OUTRA
+          </div>       
+          <div class="take-picture-back" (click)="goToWelcome();">
+              <i class="fas fa-arrow-left"></i> VOLTAR
+          </div>          
+      </div>  
+      </div>
+  
+    </section>
+  </div>

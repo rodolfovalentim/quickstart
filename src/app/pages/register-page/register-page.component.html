@@ -1,3 +1,41 @@
-<p>
-  register-page works!
-</p>
+
+<mat-card style="margin:auto; margin-top:220px; width: 600px;">
+    <h1 style="text-align:center">Cadastre suas informações:</h1>
+
+    <div class="example-container">
+      <mat-form-field appearance="outline">
+          <mat-label>Nome</mat-label>
+          <input matInput [(ngModel)]="name">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput [(ngModel)]="email">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+          <mat-label>Cidade/Estado</mat-label>
+          <input matInput [(ngModel)]="place">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Telefone</mat-label>
+        <input matInput [(ngModel)]="phone">
+      </mat-form-field>
+    </div>
+  
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <button mat-raised-button type="reset" (click)="cancel()">Cancelar</button> 
+        </div>
+        <div class="col-sm">
+          <button mat-raised-button type="submit" color="warn" type="submit" (click)="register()">Registrar</button>
+        </div>
+        <div class="col-sm">
+          <button mat-raised-button type="button" (click)="jump()">Pular</button>
+        </div>
+      </div>
+    </div>
+
+</mat-card>

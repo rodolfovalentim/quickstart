@@ -28,7 +28,7 @@ export class LoginPageComponent implements OnInit {
         r => {
           if (r.token) {
             this.customer.setToken(r.token);
-            this.router.navigateByUrl('/dashboard');
+            this.router.navigateByUrl('/welcome');
           }
         },
         r => {

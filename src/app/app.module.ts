@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule }   from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'; 
+import { WebcamModule } from 'ngx-webcam';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
@@ -19,7 +20,10 @@ import { JackpotPageComponent } from './pages/jackpot-page/jackpot-page.componen
 import { CameraPageComponent } from './pages/camera-page/camera-page.component';
 import { PhotoPageComponent } from './pages/photo-page/photo-page.component';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
+import { QuizPageComponent } from './pages/quiz-page/quiz-page.component';
+import { WelcomePageComponent } from './pages/welcome-page/welcome-page.component';
 
+import { AuthGuardService } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,9 @@ import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.co
     JackpotPageComponent,
     CameraPageComponent,
     PhotoPageComponent,
-    DashboardPageComponent
+    DashboardPageComponent,
+    QuizPageComponent,
+    WelcomePageComponent
   ],
   imports: [
     BrowserModule,
@@ -41,9 +47,10 @@ import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.co
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    WebcamModule
   ],
-  providers: [],
+  providers: [ AuthGuardService ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

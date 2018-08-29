@@ -1,0 +1,99 @@
+.container{
+    margin-top: 50px;
+}
+
+.text-center{
+    text-align: center
+}
+
+/* HEADER */
+.logo{
+    margin-top: 40px;
+    width: 70%;
+}
+.event-name{
+    color: white;
+    margin-top: 50px
+}
+.picture-step{
+    color: white;
+    font-size: larger;
+}
+.take-picture{
+    cursor: pointer;
+    color: #663060;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+    font-size: x-large;
+    /* margin-top: 50px; */
+    font-weight: bold
+}
+.take-picture-back{
+    cursor: pointer;
+    color: white;
+    border: solid 2px white;    
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+    font-size: x-large;
+    margin-top: 20px;
+    font-weight: bold
+}
+.picture-frame{
+    width: 45%;
+    cursor: pointer;
+}
+.frame{
+    position: absolute;          
+    z-index: 99;
+    width: 100%;
+    left: 0;
+    
+}
+.pull-right{
+    float: right;
+}
+.picture-flash{
+    position: absolute;          
+    z-index: 9999999999999999;          
+    width: 640px;
+    height: 480px;
+    background-color: white;
+}
+.countdown{
+    position: absolute;
+    text-align: center;
+    z-index: 9999999999999999;
+    left: 43%;
+    top: 14%;
+    color: white;
+    font-size: 200px;
+    font-weight: bold;
+}
+.acknowledgment{
+    position: absolute;
+    text-align: center;
+    z-index: 9;
+    height: 480px;
+    width: 100%;
+    padding-top: 25%;                        
+    background-color : #663060; 
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.confirmation{
+    position: absolute;
+    text-align: center;
+    z-index: 9;
+    left: 0;
+    /* height: 480px; */
+    width: 100%;                    
+    background-color : #663060; 
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
