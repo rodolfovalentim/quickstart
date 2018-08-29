@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 
-import {ApiService} from '../../services/api.service';
-import {CustomerService} from '../../services/customer.service';
+import { ApiService} from '../../services/api.service';
+import { CustomerService } from '../../services/customer.service';
+
 
 @Component({
   selector: 'app-login-page',

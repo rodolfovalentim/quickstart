@@ -2,8 +2,8 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {LoginResultModel} from '../models/LoginResultModel'
-import {Config} from '../models/Config'
-
+import { Page } from '../models/Page'
+import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -24,9 +24,9 @@ export class ApiService {
     });
   }
 
-  getConfig() {
-    return this.http.get(this.configUrl);
-  }
+  getPages(): Observable<Page[]> {
+    return this.http.get<Page[]>(this.configUrl);
+  } 
 
   getImages() {
 

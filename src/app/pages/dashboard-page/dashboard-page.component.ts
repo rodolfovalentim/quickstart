@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
-import { ConfigComponent } from '../../components/config/config.component';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -19,8 +18,6 @@ export class DashboardPageComponent implements OnInit {
   }
 
   showConfig() {
-    this.api.getConfig().subscribe((data: ConfigComponent) => this.config = {
-      
-    });
+
   }
 }
