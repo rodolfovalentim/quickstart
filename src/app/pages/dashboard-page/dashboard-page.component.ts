@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 
+import { Page } from "../../models/Page";
+
 @Component({
   selector: 'app-dashboard-page',
   templateUrl: './dashboard-page.component.html',
@@ -8,16 +10,16 @@ import { ApiService } from '../../services/api.service';
 })
 export class DashboardPageComponent implements OnInit {
 
-  config = ""
+  pages: Page[];
   
   constructor(private api: ApiService) { }
 
   ngOnInit() {
-    // var reader = new FileReader();
-    // reader.readAsText("../../assets/config.json");
+    this.getPages();
+    console.log("Oi");
   }
 
-  showConfig() {
-
+  getPages(): void {
+    this.api.getPages().subscribe(pages => this.pages = pages);
   }
 }

@@ -27,7 +27,13 @@ import { QuizPageComponent } from './pages/quiz-page/quiz-page.component';
 import { WelcomePageComponent } from './pages/welcome-page/welcome-page.component';
 
 import { AuthGuardService } from './auth.guard';
-import { ConfigComponent } from './components/config/config.component';
+
+import { APP_INITIALIZER } from '@angular/core';
+import { ConfigService } from './services/config.service';
+
+export function initializeApp(appConfig: ConfigService) {
+  return () => appConfig.load();
+}
 
 const customLayouts: IKeyboardLayouts = {
   ...keyboardLayouts,
@@ -56,7 +62,6 @@ const customLayouts: IKeyboardLayouts = {
     DashboardPageComponent,
     QuizPageComponent,
     WelcomePageComponent,
-    ConfigComponent
   ],
   imports: [
     BrowserModule,
@@ -74,7 +79,8 @@ const customLayouts: IKeyboardLayouts = {
     MatKeyboardModule,
     MatStepperModule  
   ],
-  providers: [ AuthGuardService, {provide: MAT_KEYBOARD_LAYOUTS, useValue: customLayouts} ],
+  providers: [ AuthGuardService, {provide: MAT_KEYBOARD_LAYOUTS, useValue: customLayouts}, 
+    ConfigService, { provide: APP_INITIALIZER, useFactory: initializeApp, deps: [ConfigService], multi: true }],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}

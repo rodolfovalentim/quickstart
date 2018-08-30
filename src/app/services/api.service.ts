@@ -3,7 +3,6 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {LoginResultModel} from '../models/LoginResultModel'
 import { Page } from '../models/Page'
-import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +10,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 export class ApiService {
 
   loginUrl = 'https://reqres.in/api/login'
-  configUrl = 'https://localhost:8000/assets/config.json';
+  configUrl = 'https://10ff153d-9119-4e8b-8fe6-315a78878073.mock.pstmn.io/config';
 
   constructor(private http: HttpClient) { 
 
@@ -27,7 +26,7 @@ export class ApiService {
   getPages(): Observable<Page[]> {
     return this.http.get<Page[]>(this.configUrl);
   } 
-
+  
   getImages() {
 
   }
