@@ -2,8 +2,8 @@
 @import '~compass-mixins/lib/compass/css3';
 
 // $unit-of-speed: 50ms; // crazy fast
-$unit-of-speed: 50ms; // normal
-// $unit-of-speed: 1000ms; // boring
+// $unit-of-speed: 50ms; // normal
+$unit-of-speed: 50ms; // boring
 
 @mixin odometer-styling () {
   @include text-shadow(0 -1px rgba(0, 0, 
@@ -19,75 +19,65 @@ $unit-of-speed: 50ms; // normal
 @mixin digit-styling() {
   border-right: 1px solid rgba(0, 0, 0, 0.5);
   border-left: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 0 0.7em;
+  // padding: 0 0.7em;
+  padding: 0;
   font-size : 6em;
   &:first-child {
     border-left: none;
   }
 }
 
-@mixin animation($single-animation) {
-  -webkit-animation: $single-animation;
-  animation: $single-animation;
-}
-
-@mixin animation-duration($duration) {
-  -webkit-animation-duration: $duration;
-  animation-duration: $duration;
-}
-
 .odometer {
-  height: 9em;
+  position: relative;
+  left: 135px;
+  top: 18px;
+  width: 840px;
+  height: 200px;
   box-sizing: initial;
-  @include odometer-styling();
+  overflow: hidden;
+
+}
+
+.odometer .col-sm {
+  flex-basis: auto;
+  padding: 0;
+  width: 280px;
 }
 
 .digit {
   display: inline-block;
-  height: 1.5em;
-  width: 1.5em;
   overflow: hidden;
   
   @include digit-styling();
 }
 
-.digit-container {
-  line-height: 0.9em;
-  @include animation(slide 10 linear);
-}
-
-.digit-one {
-  @include animation-duration(10 * $unit-of-speed);
-}
-
-.digit-ten {
-  @include animation-duration(15 * $unit-of-speed);
-}
-
-.digit-hundred {
-  @include animation-duration(20 * $unit-of-speed);
-}
-
-@-webkit-keyframes slide {
-  from {
-    -webkit-transform: translateY(-3em);
-  }
-
-  to {
-    -webkit-transform: translateY(0);
-  }
-}
-@keyframes slide {
-  from {
-    transform: translateY(-3em);
-  }
-
-  to {
-    transform: translateY(0);
-  }
+.img-wrapper {
+  width: 280px;
+  height: 200px;
 }
 
 img {
-  max-width: 100%; 
-  max-height: 100%;
+  max-width: 280px; 
+  max-height: 200px;
+}
+
+button {
+  width: inherit;
+}
+
+.jackpot-wrapper {
+  margin-top: 309px;
+  // margin-left: 295px;
+  // width: 1064px;
+  height: 250px;
+  background-repeat: no-repeat;
+  background-image: url("../../../assets/images/jackpot/jackpot.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+button {
+  width: inherit;
 }

@@ -11,7 +11,7 @@ export class WelcomePageComponent implements OnInit {
   constructor(private router : Router) { }
 
   goToQuiz(){
-    this.router.navigate(['quiz'])
+    this.router.navigate(['jackpot'])
   }
 
   goToCamera(){

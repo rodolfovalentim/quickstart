@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginPageComponent},
   { path: 'register', component: RegisterPageComponent, canActivate: [AuthGuardService] },
-  { path: 'jackpot', component: JackpotPageComponent, canActivate: [AuthGuardService] },
+  { path: 'jackpot', component: JackpotPageComponent },
   { path: 'camera', component: CameraPageComponent, canActivate: [AuthGuardService] },
   { path: 'photo', component: PhotoPageComponent, canActivate: [AuthGuardService] },
   { path: 'dashboard', component: DashboardPageComponent, canActivate: [AuthGuardService] },

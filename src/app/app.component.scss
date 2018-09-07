@@ -1,6 +1,11 @@
 
 body > .container {
   padding: 60px 15px 0;
+  background-image: url("../assets/images/bg-jackpot.png");
+  background-repeat: no-repeat;
+  background-position-x: 0;
+  background-position-y: 0;
+  background-color: white;
 }
 .container .text-muted {
   margin: 20px 0;
