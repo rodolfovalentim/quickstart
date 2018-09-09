@@ -12,13 +12,13 @@ export class WelcomePageComponent implements OnInit {
   protected apiServer = ConfigService.name;
   bgColor = "#222";
 
-  constructor(private router : Router) { 
+  constructor(private config: ConfigService, private router : Router) { 
     document.body.style.backgroundColor = this.bgColor;
   }
 
   goToNext(){
-    console.log(this.apiServer)
-    this.router.navigate(['jackpot'])
+    let nextPage = this.config.getNextPage();
+    this.router.navigateByUrl(nextPage);
   }
 
   ngOnInit() {

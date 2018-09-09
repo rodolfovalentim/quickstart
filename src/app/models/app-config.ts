@@ -4,6 +4,7 @@ export interface IAppConfig {
   eventKey: string;
   outputConfig: OutputConfig;
   api: Api;
+  screen_order: string[];
   screens: Screen[];
 }
 

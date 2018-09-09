@@ -2,6 +2,7 @@
     "id":1,
     "name":"EventoTesteGeral",
     "eventKey":"XYZ",
+    "screen_order": ["INTRO", "FORM", "QUIZ", "SLOTMACHINE", "CAMERA", "END"],
     "outputConfig":{
        "dropboxToken":"aaaaaazzzzzzxxxxxxxx",
        "facebookToken":"aaaxxxxxsssss",
@@ -19,7 +20,7 @@
     "screens":[
        {
           "id":1,
-          "screenType":"INTRO",
+          "screenType":"welcome",
           "title":{
              "text":"Introdução evento teste",
              "color":"#00FF00",
@@ -40,7 +41,7 @@
        },
        {
           "id":1,
-          "screenType":"FORM",
+          "screenType":"register",
           "title":{
              "text":"Cadastre suas informações",
              "color":"#443355",
@@ -77,7 +78,7 @@
        },
        {
           "id":null,
-          "screenType":"QUIZ",
+          "screenType":"quiz",
           "title":{
              "text":"Titulo do quiz",
              "color":"#334455",
@@ -236,7 +237,7 @@
        },
        {
           "id":null,
-          "screenType":"SLOTMACHINE",
+          "screenType":"jackpot",
           "title":{
              "text":"Show de premios casas bahia",
              "color":"#123123",
@@ -324,7 +325,7 @@
        },
        {
           "id":null,
-          "screenType":"CAMERA",
+          "screenType":"camera",
           "backgroundPath":"pathBackground_cam.png",
           "frames":[
              {
@@ -388,7 +389,7 @@
        },
        {
           "id":null,
-          "screenType":"END",
+          "screenType":"end",
           "backgroundPath":"path/back/backQuiz.png",
           "title":{
              "text":"Obrigado por participar!",

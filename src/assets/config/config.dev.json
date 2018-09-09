@@ -2,6 +2,7 @@
     "id":1,
     "name":"EventoTesteGeral",
     "eventKey":"XYZ",
+    "screen_order": ["INTRO", "FORM", "QUIZ", "SLOTMACHINE", "CAMERA", "END"],
     "outputConfig":{
        "dropboxToken":"aaaaaazzzzzzxxxxxxxx",
        "facebookToken":"aaaxxxxxsssss",

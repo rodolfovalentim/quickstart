@@ -1,8 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {LoginResultModel} from '../models/LoginResult.model'
-import { Page } from '../models/Page.model'
+import {LoginResultModel} from '../models/login-result'
 
 @Injectable({
   providedIn: 'root'

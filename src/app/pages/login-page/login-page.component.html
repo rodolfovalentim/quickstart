@@ -5,19 +5,23 @@
 <mat-card style="margin:auto;width: 600px;">
   <div class="example-container">
     <mat-form-field appearance="outline">
-      <mat-label>Email</mat-label>
-      <input matInput [(ngModel)]="email" [matKeyboard]="'de-CH'">
+      <mat-label>Evento ID</mat-label>
+      <input matInput [(ngModel)]="eventId" [matKeyboard]="'de-CH'">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
         <mat-label>Password</mat-label>
-        <input matInput type="password" [(ngModel)]="password">
+        <input matInput type="password" [(ngModel)]="password" [matKeyboard]="'de-CH'">
     </mat-form-field>
     
     <button mat-raised-button color="warn" type="submit" class="btn btn-primary" (click)="tryLogin()">Login</button>
   </div>
 </mat-card>
 
-<footer class="footer">
-  <img id="company-logo" src="assets/images/hardcode-logo.png">
+<footer class="container">
+  <div class="row">
+    <div class="col-sm" style="text-align: center; padding: 25px">
+      <img id="company-logo" src="assets/images/hardcode-logo.png">
+    </div>
+  </div>
 </footer>

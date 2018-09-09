@@ -5,22 +5,22 @@
     <div class="example-container">
       <mat-form-field appearance="outline">
           <mat-label>Nome</mat-label>
-          <input matInput [(ngModel)]="name">
+          <input matInput [matKeyboard]="'de-CH'" [(ngModel)]="name">
       </mat-form-field>
 
       <mat-form-field appearance="outline">
           <mat-label>Email</mat-label>
-          <input matInput [(ngModel)]="email">
+          <input matInput [matKeyboard]="'de-CH'" [(ngModel)]="email">
       </mat-form-field>
 
       <mat-form-field appearance="outline">
           <mat-label>Cidade/Estado</mat-label>
-          <input matInput [(ngModel)]="place">
+          <input matInput [matKeyboard]="'de-CH'" [(ngModel)]="place">
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Telefone</mat-label>
-        <input matInput [(ngModel)]="phone">
+        <input matInput [matKeyboard]="'de-CH'" [(ngModel)]="phone">
       </mat-form-field>
     </div>
   

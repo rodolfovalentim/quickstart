@@ -12,24 +12,25 @@ import { CustomerService } from '../../services/customer.service';
 })
 export class LoginPageComponent implements OnInit {
 
-  email = 'peter@klaven';
+  eventId = 'peter@klaven';
   password = 'cityslicka';
 
   constructor(private api: ApiService, private customer: CustomerService, private router: Router) { }
 
   ngOnInit() {
+    document.body.style.backgroundColor = "#222";
   }
 
   tryLogin() {
     this.api.login(
-      this.email,
+      this.eventId,
       this.password
     )
       .subscribe(
         r => {
           if (r.token) {
             this.customer.setToken(r.token);
-            this.router.navigateByUrl('/welcome');
+            this.router.navigateByUrl('/dashboard');
           }
         },
         r => {
