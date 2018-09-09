@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IAppConfig } from '../models/app-config.model';
+import { IAppConfig } from '../models/AppConfig.model';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -18,6 +18,7 @@ export class ConfigService {
             .subscribe(result => {
             ConfigService.settings = <IAppConfig>result
             console.log("Config", ConfigService.settings);
+            error => console.log("HTTP Error", error)
         });
     }
 }

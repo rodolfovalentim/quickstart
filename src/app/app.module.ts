@@ -13,6 +13,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
@@ -74,6 +75,7 @@ const customLayouts: IKeyboardLayouts = {
     MatFormFieldModule,
     MatInputModule,
     MatRadioModule,
+    MatGridListModule,
     HttpClientModule,
     WebcamModule,
     MatKeyboardModule,

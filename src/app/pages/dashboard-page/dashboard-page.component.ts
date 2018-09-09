@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 
-import { Page } from "../../models/Page";
+import { Page } from "../../models/Page.model";
 
 @Component({
   selector: 'app-dashboard-page',
@@ -15,11 +15,6 @@ export class DashboardPageComponent implements OnInit {
   constructor(private api: ApiService) { }
 
   ngOnInit() {
-    this.getPages();
     console.log("Oi");
-  }
-
-  getPages(): void {
-    this.api.getPages().subscribe(pages => this.pages = pages);
   }
 }

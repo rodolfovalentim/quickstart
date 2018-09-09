@@ -1,6 +1,6 @@
 export interface Page {
     name: string;
-    enable: string;
+    screenType: string;
     msg: string;
     background: string;
     next: string;

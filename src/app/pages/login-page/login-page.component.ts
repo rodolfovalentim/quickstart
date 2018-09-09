@@ -29,7 +29,7 @@ export class LoginPageComponent implements OnInit {
         r => {
           if (r.token) {
             this.customer.setToken(r.token);
-            this.router.navigateByUrl('/jackpot');
+            this.router.navigateByUrl('/welcome');
           }
         },
         r => {

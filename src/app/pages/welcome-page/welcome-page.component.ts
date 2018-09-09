@@ -1,5 +1,6 @@
 import { Router } from '@angular/router';
-import { Component, OnInit, AfterViewInit, ElementRef} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ConfigService } from '../../services/config.service';
 
 @Component({
   selector: 'app-welcome-page',
@@ -8,17 +9,19 @@ import { Component, OnInit, AfterViewInit, ElementRef} from '@angular/core';
 })
 export class WelcomePageComponent implements OnInit {
 
-  constructor(private router : Router) { }
+  protected apiServer = ConfigService.name;
+  bgColor = "#222";
 
-  goToQuiz(){
+  constructor(private router : Router) { 
+    document.body.style.backgroundColor = this.bgColor;
+  }
+
+  goToNext(){
+    console.log(this.apiServer)
     this.router.navigate(['jackpot'])
   }
 
-  goToCamera(){
-    this.router.navigate(['camera'])
-  }
-
   ngOnInit() {
-
+    console.log("Initialize Welcome Page")
   }
 }

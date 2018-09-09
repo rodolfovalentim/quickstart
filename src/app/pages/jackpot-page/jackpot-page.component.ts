@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
 import { ConfigService } from '../../services/config.service';
-import { IAppConfig } from '../../models/app-config.model'
 
 @Component({
   selector: 'app-jackpot-page',
@@ -30,7 +29,7 @@ export class JackpotPageComponent implements OnInit {
 
   state = 'active';
 
-  apiServer = ConfigService.settings.env.name;
+  protected apiServer = ConfigService.settings;
 
   sortImages = []
 
@@ -41,7 +40,6 @@ export class JackpotPageComponent implements OnInit {
   toggleState() {
     this.sort()
     this.state = this.state === 'active' ? 'inactive' : 'active'
-    console.log(this.apiServer)
     console.log(this.state)
   }
 

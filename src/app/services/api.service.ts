@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {LoginResultModel} from '../models/LoginResultModel'
-import { Page } from '../models/Page'
+import {LoginResultModel} from '../models/LoginResult.model'
+import { Page } from '../models/Page.model'
 
 @Injectable({
   providedIn: 'root'
@@ -21,13 +21,5 @@ export class ApiService {
       email: email,
       password: password
     });
-  }
-
-  getPages(): Observable<Page[]> {
-    return this.http.get<Page[]>(this.configUrl);
-  } 
-  
-  getImages() {
-
   }
 }
