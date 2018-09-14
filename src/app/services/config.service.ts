@@ -9,7 +9,6 @@ import { environment } from '../../environments/environment';
 export class ConfigService {
 
     static settings: IAppConfig;
-    pageManager: number;
 
     constructor(private http: HttpClient) { }
 
@@ -32,21 +31,14 @@ export class ConfigService {
     getPageInfo(pageType: string){
         for (let page of ConfigService.settings.screens) {
             console.log(page.screenType);
+            if (page.screenType == pageType) {
+              return page;
+            }
         }
     }
 
-    getNextPage(begin?:boolean) {
-      if (begin) {
-        this.pageManager = 0;
-      } else {
-        this.pageManager += 1;
-      }
-
-      if (this.pageManager > ConfigService.settings.screens.length) {
-        this.pageManager = this.pageManager%ConfigService.settings.screens.length;
-      }      
-      console.log("Next Page: ", ConfigService.settings.screens[this.pageManager].screenType)
-      return ConfigService.settings.screens[this.pageManager].screenType
+    getFirstPage() {
+      return ConfigService.settings.screens[0].screenType
     }
 
 

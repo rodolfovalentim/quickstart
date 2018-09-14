@@ -1,4 +1,4 @@
-import { Component, Input, OnInit }  from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter }  from '@angular/core';
 import { FormGroup }                 from '@angular/forms';
  
 import { QuestionBase }              from '../../models/question-base';
@@ -13,13 +13,14 @@ import { QuestionControlService }    from '../../services/question-control.servi
 export class DynamicFormComponent implements OnInit {
 
   @Input() questions: QuestionBase<any>[] = [];
+  @Output() countChanged: EventEmitter<number> = new EventEmitter();
+
   form: FormGroup;
   payLoad = '';
  
   constructor(private qcs: QuestionControlService) {  }
  
   ngOnInit() {
-    console.log("Dashboard: ", this.questions);
     this.form = this.qcs.toFormGroup(this.questions);
   }
  

@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuizPageComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+    document.body.style.backgroundColor = "#222";
+  }
 
   ngOnInit() {
   }

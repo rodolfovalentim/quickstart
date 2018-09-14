@@ -2,7 +2,6 @@
     "id":1,
     "name":"EventoTesteGeral",
     "eventKey":"XYZ",
-    "screen_order": ["INTRO", "FORM", "QUIZ", "SLOTMACHINE", "CAMERA", "END"],
     "outputConfig":{
        "dropboxToken":"aaaaaazzzzzzxxxxxxxx",
        "facebookToken":"aaaxxxxxsssss",
@@ -21,6 +20,7 @@
        {
           "id":1,
           "screenType":"welcome",
+          "next": "register",
           "title":{
              "text":"Introdução evento teste",
              "color":"#00FF00",
@@ -29,7 +29,7 @@
           },
           "button":{
              "color":"#FF00FF",
-             "icon":"fa-icon",
+             "icon":"far-calendar",
              "text":{
                 "text":null,
                 "color":"#00FF00",
@@ -42,6 +42,7 @@
        {
           "id":1,
           "screenType":"register",
+          "next": "register",
           "title":{
              "text":"Cadastre suas informações",
              "color":"#443355",
@@ -50,7 +51,7 @@
           },
           "submitButton":{
              "color":"#336633",
-             "icon":"fa-icon",
+             "icon":"far-calendar",
              "text":{
                 "text":"Pular",
                 "color":"#004433",
@@ -62,7 +63,7 @@
           "skip":true,
           "skipButton":{
              "color":"#333333",
-             "icon":"fa-icon",
+             "icon":"fa-calendar",
              "text":{
                 "text":"Pular",
                 "color":"#004433",
@@ -79,6 +80,7 @@
        {
           "id":null,
           "screenType":"quiz",
+          "next": "register",
           "title":{
              "text":"Titulo do quiz",
              "color":"#334455",
@@ -99,7 +101,7 @@
           },
           "startButton":{
              "color":"#234234",
-             "icon":"fa-icon",
+             "icon":"far-calendar",
              "text":{
                 "text":"Iniciar",
                 "color":"#123123",
@@ -109,7 +111,7 @@
           },
           "nextButton":{
              "color":"#234234",
-             "icon":"fa-icon",
+             "icon":"far-calendar",
              "text":{
                 "text":"Proximo",
                 "color":"#123123",
@@ -119,7 +121,7 @@
           },
           "finishButton":{
              "color":"#234234",
-             "icon":"fa-icon",
+             "icon":"far-calendar",
              "text":{
                 "text":"Proximo",
                 "color":"#123123",
@@ -157,7 +159,7 @@
           },
           "tryAgainButton":{
              "color":"#234234",
-             "icon":"fa-icon",
+             "icon":"far-calendar",
              "text":{
                 "text":"Tentar novamente",
                 "color":"#123123",
@@ -238,6 +240,7 @@
        {
           "id":null,
           "screenType":"jackpot",
+          "next": "register",
           "title":{
              "text":"Show de premios casas bahia",
              "color":"#123123",
@@ -246,7 +249,7 @@
           },
           "finishButton":{
              "color":"#234234",
-             "icon":"fa-icon",
+             "icon":"far-calendar",
              "text":{
                 "text":"Finalizar",
                 "color":"#123123",
@@ -256,7 +259,7 @@
           },
           "spinButton":{
              "color":null,
-             "icon":"fa-icon",
+             "icon":"far-calendar",
              "text":{
                 "text":"Rodar",
                 "color":"#234234",
@@ -266,7 +269,7 @@
           },
           "tryAgainButton":{
              "color":null,
-             "icon":"fa-icon",
+             "icon":"far-calendar",
              "text":{
                 "text":"Rodar",
                 "color":"#234234",
@@ -326,6 +329,7 @@
        {
           "id":null,
           "screenType":"camera",
+          "next": "register",
           "backgroundPath":"pathBackground_cam.png",
           "frames":[
              {
@@ -363,7 +367,7 @@
           ],
           "takePicButton":{
              "color":"#234234",
-             "icon":"fa-icon",
+             "icon":"far-calendar",
              "text":{
                 "text":"Tira foto",
                 "color":"#123123",
@@ -373,7 +377,7 @@
           },
           "takeNewPicButton":{
              "color":"#234234",
-             "icon":"fa-icon",
+             "icon":"far-calendar",
              "text":{
                 "text":"Tira outra foto",
                 "color":"#123123",
@@ -390,6 +394,7 @@
        {
           "id":null,
           "screenType":"end",
+          "next": "register",
           "backgroundPath":"path/back/backQuiz.png",
           "title":{
              "text":"Obrigado por participar!",
@@ -405,7 +410,7 @@
           },
           "button":{
              "color":"#234234",
-             "icon":"fa-icon",
+             "icon":"far-calendar",
              "text":{
                 "text":"Proximo",
                 "color":"#123123",

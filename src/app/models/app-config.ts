@@ -4,16 +4,17 @@ export interface IAppConfig {
   eventKey: string;
   outputConfig: OutputConfig;
   api: Api;
-  screen_order: string[];
   screens: Screen[];
 }
 
 interface Screen {
   id?: number;
   screenType: string;
+  next: string;
   title?: Title;
   button?: Button;
-  backgroundPath: string;
+  backgroundPath?: string;
+  backgroundColor?: string;
   submitButton?: SubmitButton;
   skip?: boolean;
   skipButton?: SubmitButton;

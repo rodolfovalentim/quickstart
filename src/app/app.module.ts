@@ -36,6 +36,10 @@ import { DynamicFormQuestionComponent } from './components/dynamic-form-question
 
 import { APP_INITIALIZER } from '@angular/core';
 import { ConfigService } from './services/config.service';
+import { TextComponent } from './components/text/text.component';
+import { ButtonComponent } from './components/button/button.component';
+
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 export function initializeApp(appConfig: ConfigService) {
   return () => appConfig.load();
@@ -69,7 +73,9 @@ const customLayouts: IKeyboardLayouts = {
     QuizPageComponent,
     WelcomePageComponent,
     DynamicFormComponent,
-    DynamicFormQuestionComponent
+    DynamicFormQuestionComponent,
+    TextComponent,
+    ButtonComponent    
   ],
   imports: [
     BrowserModule,
@@ -89,6 +95,7 @@ const customLayouts: IKeyboardLayouts = {
     MatKeyboardModule,
     MatStepperModule,
     ReactiveFormsModule,
+    FontAwesomeModule
   ],
   providers: [ AuthGuardService, {provide: MAT_KEYBOARD_LAYOUTS, useValue: customLayouts}, 
     ConfigService, { provide: APP_INITIALIZER, useFactory: initializeApp, deps: [ConfigService], multi: true }],

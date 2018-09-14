@@ -1,27 +1,8 @@
-
 <mat-card style="margin:auto; margin-top:220px; width: 600px;">
-    <h1 style="text-align:center">Cadastre suas informações:</h1>
+    <h1 style="text-align:center">{{ title }}</h1>
 
     <div class="example-container">
-      <mat-form-field appearance="outline">
-          <mat-label>Nome</mat-label>
-          <input matInput [matKeyboard]="'de-CH'" [(ngModel)]="name">
-      </mat-form-field>
-
-      <mat-form-field appearance="outline">
-          <mat-label>Email</mat-label>
-          <input matInput [matKeyboard]="'de-CH'" [(ngModel)]="email">
-      </mat-form-field>
-
-      <mat-form-field appearance="outline">
-          <mat-label>Cidade/Estado</mat-label>
-          <input matInput [matKeyboard]="'de-CH'" [(ngModel)]="place">
-      </mat-form-field>
-
-      <mat-form-field appearance="outline">
-        <mat-label>Telefone</mat-label>
-        <input matInput [matKeyboard]="'de-CH'" [(ngModel)]="phone">
-      </mat-form-field>
+      <app-dynamic-form [questions]="questions"></app-dynamic-form>
     </div>
   
     <div class="container">
