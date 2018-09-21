@@ -1,8 +1,9 @@
 import { Component, Input, Output, OnInit, EventEmitter }  from '@angular/core';
-import { FormGroup }                 from '@angular/forms';
+import { FormGroup } from '@angular/forms';
  
-import { QuestionBase }              from '../../models/question-base';
-import { QuestionControlService }    from '../../services/question-control.service';
+import { QuestionBase } from '../../models/question-base';
+import { QuestionControlService } from '../../services/question-control.service';
+import { AnswerService } from "../../services/answer.service";
 
 @Component({
   selector: 'app-dynamic-form',
@@ -13,19 +14,34 @@ import { QuestionControlService }    from '../../services/question-control.servi
 export class DynamicFormComponent implements OnInit {
 
   @Input() questions: QuestionBase<any>[] = [];
-  @Output() countChanged: EventEmitter<number> = new EventEmitter();
+  
+  @Input() iconBtnSubmit: string;
+  @Input() iconBtnSkip: string;
+
+  @Input() textBtnSubmit: string;
+  @Input() textBtnSkip: string;
+  @Input() btnSubmitStyle = {};
+  @Input() btnSkipStyle = {};
+
+  @Input() skipEnable = true;
+
+  @Input() mode = "stack";
 
   form: FormGroup;
   payLoad = '';
- 
-  constructor(private qcs: QuestionControlService) {  }
+  keyboardLayout = 'Portuguese (Brazil)';
+  
+  constructor(
+    private qcs: QuestionControlService,
+    private answer: AnswerService
+    ) {}
  
   ngOnInit() {
     this.form = this.qcs.toFormGroup(this.questions);
   }
  
   onSubmit() {
-    this.payLoad = JSON.stringify(this.form.value);
+    let answer = JSON.stringify(this.form.value);
+    this.answer.announceAnswer(answer);
   }
-
 }

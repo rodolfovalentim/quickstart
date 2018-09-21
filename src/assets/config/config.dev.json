@@ -42,7 +42,7 @@
      {
         "id":1,
         "screenType":"register",
-        "next": "register",
+        "next": "quiz",
         "title":{
            "text":"Cadastre suas informações",
            "color":"#443355",
@@ -53,7 +53,7 @@
            "color":"#336633",
            "icon":"far-calendar",
            "text":{
-              "text":"Pular",
+              "text":"Registrar",
               "color":"#004433",
               "fontPath":null,
               "fontName":"Tahoma"
@@ -63,7 +63,7 @@
         "skip":true,
         "skipButton":{
            "color":"#333333",
-           "icon":"fa-calendar",
+           "icon":"far-calendar",
            "text":{
               "text":"Pular",
               "color":"#004433",
@@ -71,16 +71,48 @@
               "fontName":"Tahoma"
            }
         },
-        "askName":true,
-        "askPhone":true,
-        "askCity":true,
-        "askEmail":true,
-        "askBirthday":false
+        "questions": [
+          {
+            "question_type": "textbox",
+            "key": "Name",
+            "label": "Name",
+            "type": "Name",
+            "order": 1
+           },
+          {
+            "question_type": "textbox",
+            "key": "Phone",
+            "label": "Phone",
+            "type": "Phone",
+            "order": 1
+          },
+          {
+            "question_type": "textbox",
+            "key": "City",
+            "label": "City",
+            "type": "City",
+            "order": 1
+          },
+          {
+            "question_type": "textbox",
+            "key": "Email",
+            "label": "Email",
+            "type": "Email",
+            "order": 1
+          },
+          {
+            "question_type": "textbox",
+            "key": "Birthday",
+            "label": "Birthday",
+            "type": "Birthday",
+            "order": 1
+          }
+        ]
      },
      {
         "id":null,
         "screenType":"quiz",
-        "next": "register",
+        "next": "jackpot",
         "title":{
            "text":"Titulo do quiz",
            "color":"#334455",
@@ -172,66 +204,25 @@
         "numPresentedQuestions":2,
         "questions":[
            {
-              "id":null,
+              "id":1,
               "question":"Qual destes é filho de Son Goku?",
-              "answers":[
-                 {
-                    "id":null,
-                    "text":"Gohan",
-                    "correct":true
-                 },
-                 {
-                    "id":null,
-                    "text":"Pan",
-                    "correct":false
-                 },
-                 {
-                    "id":null,
-                    "text":"Picolo",
-                    "correct":false
-                 }
+              "question_type": "radio",
+              "answer": 1,
+              "options":[
+                 { "key":1, "value":"Gohan" },
+                 { "key":2, "value":"Pan" },
+                 { "key":3, "value":"Picolo" }
               ]
            },
            {
-              "id":null,
-              "question":"Quem é o melhor amigo de mario?",
-              "answers":[
-                 {
-                    "id":null,
-                    "text":"Rodolfo",
-                    "correct":false
-                 },
-                 {
-                    "id":null,
-                    "text":"Luigi",
-                    "correct":true
-                 },
-                 {
-                    "id":null,
-                    "text":"Daniel",
-                    "correct":false
-                 }
-              ]
-           },
-           {
-              "id":null,
-              "question":"Quais destes são personagens de starwars?",
-              "answers":[
-                 {
-                    "id":null,
-                    "text":"Luke",
-                    "correct":true
-                 },
-                 {
-                    "id":null,
-                    "text":"Vegeta",
-                    "correct":false
-                 },
-                 {
-                    "id":null,
-                    "text":"Chewbacca",
-                    "correct":true
-                 }
+              "id":2,
+              "question":"Qual destes é filho de puta?",
+              "question_type": "radio",
+              "answer": 1,
+              "options":[
+                 { "key":1, "value":"Bolsonaro" },
+                 { "key":2, "value":"Bolsonaro" },
+                 { "key":3, "value":"Bolsonaro" }
               ]
            }
         ],
@@ -240,7 +231,7 @@
      {
         "id":null,
         "screenType":"jackpot",
-        "next": "register",
+        "next": "camera",
         "title":{
            "text":"Show de premios casas bahia",
            "color":"#123123",
@@ -329,7 +320,7 @@
      {
         "id":null,
         "screenType":"camera",
-        "next": "register",
+        "next": "end",
         "backgroundPath":"pathBackground_cam.png",
         "frames":[
            {
@@ -394,7 +385,7 @@
      {
         "id":null,
         "screenType":"end",
-        "next": "register",
+        "next": "welcome",
         "backgroundPath":"path/back/backQuiz.png",
         "title":{
            "text":"Obrigado por participar!",

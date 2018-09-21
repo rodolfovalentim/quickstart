@@ -36,10 +36,9 @@ import { DynamicFormQuestionComponent } from './components/dynamic-form-question
 
 import { APP_INITIALIZER } from '@angular/core';
 import { ConfigService } from './services/config.service';
-import { TextComponent } from './components/text/text.component';
-import { ButtonComponent } from './components/button/button.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { PageBaseComponent } from './components/page-base/page-base.component';
 
 export function initializeApp(appConfig: ConfigService) {
   return () => appConfig.load();
@@ -53,7 +52,7 @@ const customLayouts: IKeyboardLayouts = {
       [
         ['1', '!'],
         ['2', '@'],
-        ['3', '#']  
+        ['3', '#']
       ]
     ],
     'lang': ['de-CH']
@@ -74,8 +73,7 @@ const customLayouts: IKeyboardLayouts = {
     WelcomePageComponent,
     DynamicFormComponent,
     DynamicFormQuestionComponent,
-    TextComponent,
-    ButtonComponent    
+    PageBaseComponent
   ],
   imports: [
     BrowserModule,

@@ -1,33 +1,14 @@
 <mat-card style="margin:auto; margin-top:220px; width: 600px;">
-    <mat-horizontal-stepper>
-        <mat-step label="Step 1">          
-          <mat-card><mat-radio-button value="1">Option 1</mat-radio-button></mat-card>
-          <mat-card><mat-radio-button value="1">Option 2</mat-radio-button></mat-card>
-          <div class="container">
-              <div class="row">
-                <div class="col-sm">
-                  <button mat-raised-button matStepperPrevious >Cancelar</button> 
-                </div>
-                <div class="col-sm">
-                  <button mat-raised-button matStepperNext color="primary">Próximo</button>
-                </div>
-              </div>
-            </div>
-        </mat-step>
-        <mat-step label="Step 1">
-            <mat-card><mat-radio-button value="1">Option 1</mat-radio-button></mat-card>
-            <mat-card><mat-radio-button value="1">Option 2</mat-radio-button></mat-card>
-
-            <div class="container btns">
-              <div class="row" style="padding: top 30px;">
-                <div class="col-sm">
-                  <button mat-raised-button matStepperPrevious>Cancelar</button> 
-                </div>
-                <div class="col-sm">
-                  <button mat-raised-button matStepperNext color="primary">Próximo</button>
-                </div>
-              </div>
-            </div>
-        </mat-step>
-      </mat-horizontal-stepper>
+    <h1 id="title" [ngStyle]="titleStyle">{{ title }}</h1>
+    <app-dynamic-form 
+      [mode]="mode"
+      [questions]="questions"
+      [skipEnable]="skipEnable"
+      [iconBtnSubmit]="iconBtnSubmit"
+      [iconBtnSkip]="iconBtnSkip"
+      [textBtnSubmit]="textBtnSubmit"
+      [textBtnSkip]="textBtnSkip" 
+      [btnSubmitStyle]="btnSubmitStyle"
+      [btnSkipStyle]="btnSkipStyle">
+    </app-dynamic-form>
 </mat-card>

@@ -1,16 +1,48 @@
 <div>
     <form (ngSubmit)="onSubmit()" [formGroup]="form">
-  
-      <div *ngFor="let question of questions" class="form-row">
-        <app-dynamic-form-question [question]="question" [form]="form"></app-dynamic-form-question>
+      
+      <div [ngSwitch]="mode">
+        <div *ngSwitchCase="'stack'"> 
+          <div *ngFor="let question of questions" class="form-row">
+            <app-dynamic-form-question [question]="question" [form]="form" [keyboard]='keyboardLayout'></app-dynamic-form-question>
+          </div>
+        </div>
+
+        <mat-horizontal-stepper *ngSwitchCase="'stepper'">
+            <mat-step *ngFor="let question of questions">
+              <app-dynamic-form-question [question]="question" [form]="form" [keyboard]='keyboardLayout'></app-dynamic-form-question> 
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm" style="padding: 0px">
+                    <button mat-raised-button style="margin-top: 10px;" matStepperPrevious>Back</button>
+                    <button mat-raised-button style="margin-top: 10px;" matStepperNext>Next</button>
+                  </div>
+                </div>
+              </div>
+            </mat-step>
+        </mat-horizontal-stepper>  
       </div>
   
-      <div class="form-row">
-        <button mat-raised-button type="submit" [disabled]="!form.valid">Save</button>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <button mat-raised-button color="warn" 
+            type="submit" 
+            [ngStyle]="btnSubmitStyle" 
+            [disabled]="!form.valid">
+              <fa-icon [icon]=iconBtnSubmit></fa-icon>
+              {{ textBtnSubmit }}
+            </button>
+          </div>
+          <div *ngIf="skipEnable" class="col-sm">
+            <button mat-raised-button type="button" 
+            [ngStyle]="btnSkipStyle" 
+            (click)="jump()">
+              <fa-icon [icon]=iconBtnSkip></fa-icon>
+              {{ textBtnSkip }}
+            </button>
+          </div>
+        </div>
       </div>
     </form>
-  
-    <div *ngIf="payLoad" class="form-row">
-      <strong>Saved the following values</strong><br>{{payLoad}}
-    </div>
 </div>

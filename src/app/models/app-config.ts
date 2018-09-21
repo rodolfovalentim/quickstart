@@ -18,11 +18,6 @@ interface Screen {
   submitButton?: SubmitButton;
   skip?: boolean;
   skipButton?: SubmitButton;
-  askName?: boolean;
-  askPhone?: boolean;
-  askCity?: boolean;
-  askEmail?: boolean;
-  askBirthday?: boolean;
   welcomeTitle?: Text;
   welcomeText?: Text;
   startButton?: SubmitButton;
@@ -87,15 +82,20 @@ interface SpinButton {
 }
 
 interface Question {
+  question_type?: string;
+  key?: string;
+  label?: string;
+  type?: string;
+  order?: number;
   id?: any;
-  question: string;
-  answers: Answer[];
+  question?: string;
+  options?: Options[];
+  answer: number;
 }
 
-interface Answer {
-  id?: any;
-  text: string;
-  correct: boolean;
+interface Options {
+  key?: any;
+  value: string;
 }
 
 interface TryAgainButton {

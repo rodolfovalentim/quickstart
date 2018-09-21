@@ -1,22 +1,15 @@
 <mat-card style="margin:auto; margin-top:220px; width: 600px;">
-    <h1 style="text-align:center">{{ title }}</h1>
-
+    <h1 style="text-align:center" [ngStyle]="titleStyle" >{{ title }}</h1>
     <div class="example-container">
-      <app-dynamic-form [questions]="questions"></app-dynamic-form>
+      <app-dynamic-form 
+      [questions]="questions"
+      [skipEnable]="skipEnable"
+      [iconBtnSubmit]="iconBtnSubmit"
+      [iconBtnSkip]="iconBtnSkip"
+      [textBtnSubmit]="textBtnSubmit"
+      [textBtnSkip]="textBtnSkip" 
+      [btnSubmitStyle]="btnSubmitStyle"
+      [btnSkipStyle]="btnSkipStyle">
+    </app-dynamic-form>
     </div>
-  
-    <div class="container">
-      <div class="row">
-        <div class="col-sm">
-          <button mat-raised-button type="reset" (click)="cancel()">Cancelar</button> 
-        </div>
-        <div class="col-sm">
-          <button mat-raised-button type="submit" color="warn" type="submit" (click)="register()">Registrar</button>
-        </div>
-        <div class="col-sm">
-          <button mat-raised-button type="button" (click)="jump()">Pular</button>
-        </div>
-      </div>
-    </div>
-
 </mat-card>

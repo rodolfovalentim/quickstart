@@ -1,14 +1,22 @@
-<mat-form-field [formGroup]="form" appearance="outline">
-  <mat-label [attr.for]="question.key">{{question.label}}</mat-label>
-  <div [ngSwitch]="question.controlType">
-    <input matInput *ngSwitchCase="'textbox'" [formControlName]="question.key" 
-      [id]="question.key" [type]="question.type" [matKeyboard]="'de-CH'">
+<div [ngSwitch]="question.controlType">
+  <mat-form-field *ngSwitchCase="'textbox'">
+    <mat-label [attr.for]="question.key">{{question.label}}</mat-label>
+    <input matInput [id]="question.key" [type]="question.type" [matKeyboard]="question.keyboard">
+  </mat-form-field>
     
-    <mat-select  [id]="question.key" *ngSwitchCase="'dropdown'" [formControlName]="question.key">
-      <mat-option  *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</mat-option>
-    </mat-select>
-  </div> 
-  <div class="errorMessage" *ngIf="!isValid">{{question.label}} is required</div>
-</mat-form-field>
+  <mat-select [id]="question.key" *ngSwitchCase="'dropdown'">
+    <mat-label [attr.for]="question.key">{{question.label}}</mat-label>
+    <mat-option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</mat-option>
+  </mat-select>
+
+  <mat-radio-group [id]="question.key" *ngSwitchCase="'radio'" >
+    <mat-label [attr.for]="question.key">{{question.label}}</mat-label>
+    <mat-card *ngFor="let opt of question.options" style="margin-top: 10px;"> 
+      <mat-radio-button [value]="opt.key">
+        {{opt.value}}
+      </mat-radio-button>
+    </mat-card>
+  </mat-radio-group>
+</div>
 
 

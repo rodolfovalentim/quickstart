@@ -31,20 +31,19 @@ export class WelcomePageComponent implements OnInit {
     
     this.btn = this.pageInfo.button.text.text || "Click me!";
     this.btnStyle = {
-      background: this.pageInfo.button.text.text || "red",
-      color: this.pageInfo.button.text.color || "#000",
+      'background-color': this.pageInfo.button.color || "red",
+      'color': this.pageInfo.button.text.color || "#000",
       'font-family': this.pageInfo.button.text.fontName || "serif"
     }
     
     this.title = this.pageInfo.title.text;
     this.titleStyle = {
-      color: this.pageInfo.title.color || "#000",
+      'color': this.pageInfo.title.color || "#000",
       'font-family': this.pageInfo.title.fontName || "serif"
     }
-    console.log
+
     this.icon = this.pageInfo.button.icon.split("-") || ["far", "home"]
     this.nextPage = this.pageInfo.next;
-    console.log("Next:", this.nextPage);
   }
 
   goToNext(){
