@@ -1,5 +1,5 @@
 <div [ngSwitch]="question.controlType">
-  <mat-form-field *ngSwitchCase="'textbox'">
+  <mat-form-field appearance="outline" *ngSwitchCase="'textbox'">
     <mat-label [attr.for]="question.key">{{question.label}}</mat-label>
     <input matInput [id]="question.key" [type]="question.type" [matKeyboard]="question.keyboard">
   </mat-form-field>

@@ -1,38 +1,98 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ViewChild } from '@angular/core';
-import {WebcamImage, WebcamInitError, WebcamUtil} from 'ngx-webcam';
-import {Subject} from 'rxjs';
-import {Observable} from 'rxjs';
+import { WebcamImage, WebcamInitError, WebcamUtil} from 'ngx-webcam';
+import { Subject } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
-
+import { PageBaseComponent } from '../../components/page-base/page-base.component'
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { timeout } from 'q';
+import { ConfigService } from "../../services/config.service";
 
 @Component({
   selector: 'app-camera-page',
   templateUrl: './camera-page.component.html',
   styleUrls: ['./camera-page.component.scss']
 })
-export class CameraPageComponent implements OnInit {
+export class CameraPageComponent extends PageBaseComponent {
 
   @ViewChild('videoElement') videoElement: any;
   video: any;
   picture : WebcamImage;
+
   // webcam snapshot trigger
   private trigger: Subject<void> = new Subject<void>();
   confirm_picture : String = '';
-
   selectedFrame : number;
   countdown : number
-  isPlaying = false;
 
-  displayControls = true;
+  nextPage = "";
+
+  takePicBtnText: string;
+  takeNewPicBtnText: string;
+  backBtnText: string;
+
+  takePicBtnIcon: string[];
+  takeNewPicBtnIcon: string[];
+  backBtnIcon: string[];
+  
+  takePicBtnStyle: any;
+  takeNewPicBtnStyle: any;
+  backBtnStyle: any;
+  
+  confirmBtnText: string;
+  confirmBtnIcon: string[];
+  confirmBtnStyle: any;
+
+  thankyouMensage: string;
+
+  constructor(
+    private config: ConfigService,
+    private router: Router) {
+
+    super("camera", config);
+    this.confirm_picture = ''
+
+    this.takePicBtnText = this.pageInfo.takePicButton.text.text || "Tirar foto";
+    this.takePicBtnIcon = this.pageInfo.takePicButton.icon.split("-") || ["far", "home"]
+    this.takePicBtnStyle = {
+      'background-color': this.pageInfo.takePicButton.color || "red",
+      'color': this.pageInfo.takePicButton.text.color || "#000",
+      'font-family': this.pageInfo.takePicButton.text.fontName || "serif"
+    }
+
+    this.takeNewPicBtnText = this.pageInfo.takeNewPicButton.text.text || "Tira outra foto";
+    this.takeNewPicBtnIcon = this.pageInfo.takeNewPicButton.icon.split("-") || ["far", "home"]
+    this.takeNewPicBtnStyle = {
+      'background-color': this.pageInfo.takeNewPicButton.color || "red",
+      'color': this.pageInfo.takeNewPicButton.text.color || "#000",
+      'font-family': this.pageInfo.takeNewPicButton.text.fontName || "serif"
+    }
+
+    this.backBtnText = this.pageInfo.takeNewPicButton.text.text || "Tira outra foto";
+    this.backBtnIcon = this.pageInfo.backButton.icon.split("-") || ["far", "home"]
+    this.backBtnStyle = {
+      'background-color': this.pageInfo.backButton.color || "red",
+      'color': this.pageInfo.backButton.text.color || "#000",
+      'font-family': this.pageInfo.backButton.text.fontName || "serif"
+    }
+
+    this.confirmBtnText = this.pageInfo.confirmButton.text.text || "Tira outra foto";
+    this.confirmBtnIcon = this.pageInfo.confirmButton.icon.split("-") || ["far", "home"]
+    this.confirmBtnStyle = {
+      'background-color': this.pageInfo.confirmButton.color || "red",
+      'color': this.pageInfo.confirmButton.text.color || "#000",
+      'font-family': this.pageInfo.confirmButton.text.fontName || "serif"
+    }
+
+    this.thankyouMensage = this.pageInfo.thankyouMensage.text;
+    this.nextPage = this.pageInfo.next;
+  }
 
   public triggerSnapshot(): void {    
     this.confirm_picture = ''
     this.countdown = 3;
     this.decrementCountdown()
-
   }
 
   decrementCountdown(){
@@ -53,68 +113,20 @@ export class CameraPageComponent implements OnInit {
     return this.trigger.asObservable();
   }
 
-  ngOnInit() {
-    this.selectedFrame = 1
-  }
-
-  changeFrame(frame){
-    this.selectedFrame = frame;
-    console.log(this.selectedFrame)
-  }
-
-  start() {
-    this.initCamera({ video: true, audio: false });
-  }
-
-  pause() {
-    this.video.pause();
-  }
-
-  toggleControls() {
-    this.video.controls = this.displayControls;
-    this.displayControls = !this.displayControls;
-  }
-
-  resume() {
-    this.video.play();
-  }
-
-  sound() {
-    this.initCamera({ video: true, audio: true });
-  }
-
-  initCamera(config:any) {
-    var browser = <any>navigator;
-
-    browser.getUserMedia = (browser.getUserMedia ||
-      browser.webkitGetUserMedia ||
-      browser.mozGetUserMedia ||
-      browser.msGetUserMedia);
-
-    browser.mediaDevices.getUserMedia(config).then(stream => {
-      this.video.src = window.URL.createObjectURL(stream);
-      this.video.play();
-    });
-  }
-
   public handleImage(webcamImage: WebcamImage): void {
     
     this.picture = webcamImage;
     console.log(this.picture.imageAsDataUrl)
-
-    this.confirm_picture = this.picture.imageAsDataUrl    
+    this.confirm_picture = this.picture.imageAsDataUrl
+    this.router.navigateByUrl(this.next);
   } 
 
   public printPicture(){
-    this.http.post('http://localhost:8080/agazeta/camera/foto', {'base64':this.picture.imageAsDataUrl, frame : this.selectedFrame})
-      .pipe()
-      .subscribe(response => {
-        this.confirm_picture = '';
-      })
-  }
-
-  public constructor(private router : Router,private http: HttpClient){
-    this.confirm_picture = ''
+    // this.http.post('http://localhost:8080/agazeta/camera/foto', {'base64':this.picture.imageAsDataUrl, frame : this.selectedFrame})
+    //   .pipe()
+    //   .subscribe(response => {
+    //     this.confirm_picture = '';
+    //   })
   }
 
   goToWelcome(){

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PhotoPageComponent } from './photo-page.component';
+import { EndPageComponent } from './end-page.component';
 
-describe('PhotoPageComponent', () => {
-  let component: PhotoPageComponent;
-  let fixture: ComponentFixture<PhotoPageComponent>;
+describe('EndPageComponent', () => {
+  let component: EndPageComponent;
+  let fixture: ComponentFixture<EndPageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PhotoPageComponent ]
+      declarations: [ EndPageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PhotoPageComponent);
+    fixture = TestBed.createComponent(EndPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

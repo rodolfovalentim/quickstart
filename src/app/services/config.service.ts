@@ -20,7 +20,6 @@ export class ConfigService {
             .then(
               res => {
                 ConfigService.settings = <IAppConfig>res;
-                console.log("Config", ConfigService.settings);
                 resolve();
               }
             );
@@ -30,7 +29,7 @@ export class ConfigService {
 
     getPageInfo(pageType: string){
         for (let page of ConfigService.settings.screens) {
-            console.log(page.screenType);
+            console.log("Info - Fetching data of page: ", page.screenType);
             if (page.screenType == pageType) {
               return page;
             }

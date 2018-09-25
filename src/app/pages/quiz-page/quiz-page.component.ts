@@ -19,10 +19,10 @@ library.add(fas, far);
   styleUrls: ['./quiz-page.component.scss'],
   providers:  [ QuestionService ]  
 })
-export class QuizPageComponent extends PageBaseComponent  {
+export class QuizPageComponent extends PageBaseComponent {
 
   questions: any[];
-  answers: any;
+  answers: any[];
   subscription: Subscription;
 
   skipEnable: any;
@@ -32,6 +32,8 @@ export class QuizPageComponent extends PageBaseComponent  {
   textBtnSkip: any;
   btnSubmitStyle: any;
   btnSkipStyle: any;
+  
+  counter: number;
   
   mode = "stepper";
 
@@ -54,11 +56,15 @@ export class QuizPageComponent extends PageBaseComponent  {
     this.textBtnSkip = "Submit"
     this.btnSubmitStyle = {}
     this.btnSkipStyle = {}
+    this.answers = [] 
 
     this.subscription = answerService.answersAnnounce$.subscribe(
       answer => { 
-        this.answers = answer;
-        router.navigateByUrl(this.next);
+        this.answers.push(answer);
+        console.log(this.answers)
+        if(this.answers.length == this.questions.length){
+          router.navigateByUrl(this.next);
+        }
       });
   }
 

@@ -2,6 +2,7 @@
     <h1 style="text-align:center" [ngStyle]="titleStyle" >{{ title }}</h1>
     <div class="example-container">
       <app-dynamic-form 
+      [mode]="mode"
       [questions]="questions"
       [skipEnable]="skipEnable"
       [iconBtnSubmit]="iconBtnSubmit"

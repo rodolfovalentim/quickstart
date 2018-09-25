@@ -21,6 +21,7 @@ library.add(fas, far);
 })
 export class RegisterPageComponent implements OnInit {
 
+  mode = "stack";
   questions: any[];
 
   iconBtnSubmit: string[];

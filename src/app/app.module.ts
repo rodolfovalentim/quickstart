@@ -24,10 +24,10 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { JackpotPageComponent } from './pages/jackpot-page/jackpot-page.component';
 import { CameraPageComponent } from './pages/camera-page/camera-page.component';
-import { PhotoPageComponent } from './pages/photo-page/photo-page.component';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
 import { QuizPageComponent } from './pages/quiz-page/quiz-page.component';
 import { WelcomePageComponent } from './pages/welcome-page/welcome-page.component';
+import { EndPageComponent } from './pages/end-page/end-page.component';
 
 import { AuthGuardService } from './auth.guard';
 
@@ -67,13 +67,13 @@ const customLayouts: IKeyboardLayouts = {
     RegisterPageComponent,
     JackpotPageComponent,
     CameraPageComponent,
-    PhotoPageComponent,
     DashboardPageComponent,
     QuizPageComponent,
     WelcomePageComponent,
     DynamicFormComponent,
     DynamicFormQuestionComponent,
-    PageBaseComponent
+    PageBaseComponent,
+    EndPageComponent
   ],
   imports: [
     BrowserModule,

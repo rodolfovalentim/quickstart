@@ -9,13 +9,20 @@
         </div>
 
         <mat-horizontal-stepper *ngSwitchCase="'stepper'">
-            <mat-step *ngFor="let question of questions">
+            <mat-step *ngFor="let question of questions; index as i">
               <app-dynamic-form-question [question]="question" [form]="form" [keyboard]='keyboardLayout'></app-dynamic-form-question> 
               <div class="container">
                 <div class="row">
                   <div class="col-sm" style="padding: 0px">
-                    <button mat-raised-button style="margin-top: 10px;" matStepperPrevious>Back</button>
-                    <button mat-raised-button style="margin-top: 10px;" matStepperNext>Next</button>
+                    <button mat-raised-button style="margin-top: 10px;"  *ngIf="i != 0"  matStepperPrevious>
+                      Back
+                    </button>
+                    <button color="warn" mat-raised-button style="margin-top: 10px;"  *ngIf="i < questions.length - 1"  matStepperNext>
+                      Next
+                    </button>
+                    <button color="warn" mat-raised-button style="margin-top: 10px;"  *ngIf="i == questions.length - 1"  matStepperNext>
+                      Finish
+                    </button>
                   </div>
                 </div>
               </div>
@@ -23,7 +30,7 @@
         </mat-horizontal-stepper>  
       </div>
   
-      <div class="container">
+      <div class="container" *ngIf="mode == 'stack'">
         <div class="row">
           <div class="col-sm">
             <button mat-raised-button color="warn" 

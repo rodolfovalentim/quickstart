@@ -45,6 +45,9 @@ interface Screen {
   frames?: Frame[];
   takePicButton?: SubmitButton;
   takeNewPicButton?: SubmitButton;
+  backButton?: SubmitButton;
+  confirmButton?: SubmitButton;
+  thankyouMensage?: Text; 
   routeButton?: any;
   dropboxEnabled?: boolean;
   emailEnabled?: boolean;
