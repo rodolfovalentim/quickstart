@@ -6,10 +6,7 @@
           class="animated pulse infinite countdown">
           {{countdown}}
         </div>
-      <webcam 
-        (imageCapture)="handleImage($event)" 
-        [trigger]="triggerObservable">
-      </webcam>
+      <webcam (imageCapture)="handleImage($event)" [trigger]="triggerObservable"></webcam>
     </div>
     <button mat-raised-button color="warn" class="take-picture" (click)="confirm_picture == '' ? triggerSnapshot() : printPicture()">
         <fa-icon [hidden]="confirm_picture != ''" [icon]=takePicBtnIcon></fa-icon>

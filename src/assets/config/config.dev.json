@@ -22,7 +22,7 @@
         "screenType":"welcome",
         "next": "register",
         "title":{
-           "text":"Introdução evento teste",
+           "text":"Rodolfo evento teste",
            "color":"#00FF00",
            "fontPath":"path/font/test.ttf",
            "fontName":"Arial"
@@ -211,7 +211,8 @@
               "options":[
                  { "key":1, "value":"Gohan" },
                  { "key":2, "value":"Pan" },
-                 { "key":3, "value":"Picolo" }
+                 { "key":3, "value":"Picolo" },
+                 { "key":4, "value":"Picolo" }
               ]
            },
            {
@@ -223,6 +224,17 @@
                  { "key":1, "value":"Bolsonaro" },
                  { "key":2, "value":"Bolsonaro" },
                  { "key":3, "value":"Bolsonaro" }
+              ]
+           },
+           {
+              "id":2,
+              "question":"Qual destes é legalzin?",
+              "question_type": "radio",
+              "answer": 1,
+              "options":[
+                 { "key":1, "value":"Ciro Gomes" },
+                 { "key":2, "value":"Ciro Gomes" },
+                 { "key":3, "value":"Ciro Gomes" }
               ]
            }
         ],
@@ -319,6 +331,12 @@
      },
      {
         "id":null,
+        "title":{
+          "text":"Show de premios casas bahia",
+          "color":"#123123",
+          "fontPath":null,
+          "fontName":"Arial"
+        },
         "screenType":"camera",
         "next": "end",
         "backgroundPath":"pathBackground_cam.png",
@@ -361,7 +379,7 @@
            "icon":"far-calendar",
            "text":{
               "text":"Tira foto",
-              "color":"#123123",
+              "color":"#000",
               "fontPath":null,
               "fontName":"Tahoma"
            }
@@ -371,10 +389,33 @@
            "icon":"far-calendar",
            "text":{
               "text":"Tira outra foto",
-              "color":"#123123",
+              "color":"#000",
               "fontPath":null,
               "fontName":"Tahoma"
            }
+        },"backButton":{
+           "color":"#234234",
+           "icon":"far-calendar",
+           "text":{
+              "text":"Voltar",
+              "color":"#000",
+              "fontPath":null,
+              "fontName":"Tahoma"
+           }
+        },"confirmButton":{
+           "color":"#234234",
+           "icon":"far-calendar",
+           "text":{
+              "text":"Salvar",
+              "color":"#000",
+              "fontPath":null,
+              "fontName":"Tahoma"
+           }
+        },"thankyouMensage":{
+           "text":"Sua participação é muito importante para nós!",
+           "color":"#000",
+           "fontPath":null,
+           "fontName":"Arial"
         },
         "routeButton":null,
         "dropboxEnabled":true,

@@ -2,12 +2,12 @@
     <div class="row" style="margin-top: 500px">
         <div class="col-4"></div>
         <div class="col-4" style="text-align: center">
-            <h1 [ngStyle]=titleStyle> {{ title }} </h1>
-            <button mat-raised-button color='warn' [ngStyle]=btnStyle (click)="goToNext()">
-                <fa-icon [icon]=icon></fa-icon>
-                {{ btn }}
+            <h1 [ngStyle]=title.getStyle()> {{ title.getText() }} </h1>
+            <button type="button" class="btn btn-lg btn-primary" [ngStyle]=btn.getStyle() (click)="goToNext()">
+                <p [ngStyle]=btn.getButtonTextStyle()>
+                <fa-icon [icon]=btn.getIcon()></fa-icon> {{ btn.getButtonText() }}
+                </p>
             </button>
         </div>
-        <div class="col-4"></div>
     </div>
 </div>

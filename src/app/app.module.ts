@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule }   from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'; 
 import { WebcamModule } from 'ngx-webcam';
+import { FormWizardModule } from 'angular2-wizard';
 import { ReactiveFormsModule } from '@angular/forms'
 import { IKeyboardLayouts, keyboardLayouts, MAT_KEYBOARD_LAYOUTS, MatKeyboardModule } from '@ngx-material-keyboard/core';
 
@@ -16,7 +17,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSelectModule } from '@angular/material/select';
-
+import {SplitButtonModule} from 'primeng/splitbutton';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -39,6 +40,7 @@ import { ConfigService } from './services/config.service';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PageBaseComponent } from './components/page-base/page-base.component';
+import { DynamicQuizComponent } from './components/dynamic-quiz/dynamic-quiz.component';
 
 export function initializeApp(appConfig: ConfigService) {
   return () => appConfig.load();
@@ -73,11 +75,13 @@ const customLayouts: IKeyboardLayouts = {
     DynamicFormComponent,
     DynamicFormQuestionComponent,
     PageBaseComponent,
-    EndPageComponent
+    EndPageComponent,
+    DynamicQuizComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormWizardModule,
     MatToolbarModule,
     MatCardModule,
     MatButtonModule,
@@ -93,7 +97,8 @@ const customLayouts: IKeyboardLayouts = {
     MatKeyboardModule,
     MatStepperModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    SplitButtonModule
   ],
   providers: [ AuthGuardService, {provide: MAT_KEYBOARD_LAYOUTS, useValue: customLayouts}, 
     ConfigService, { provide: APP_INITIALIZER, useFactory: initializeApp, deps: [ConfigService], multi: true }],

@@ -10,7 +10,7 @@ export class AnswerService {
   answersAnnounce$ = this.answersAnnounceSource.asObservable();
 
   announceAnswer(answer: string) {
-    console.log(answer);
+    console.log("Answer", answer);
     this.answersAnnounceSource.next(answer);
   }
 }

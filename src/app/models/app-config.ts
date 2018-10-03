@@ -89,6 +89,7 @@ interface Question {
   key?: string;
   label?: string;
   type?: string;
+  placeholder?: string;
   order?: number;
   id?: any;
   question?: string;
@@ -113,13 +114,13 @@ interface SubmitButton {
   text: Text;
 }
 
-interface Button {
+export interface Button {
   color: string;
   icon: string;
   text: Text;
 }
 
-interface Text {
+export interface Text {
   color: string;
   text?: string;
   fontPath?: string;

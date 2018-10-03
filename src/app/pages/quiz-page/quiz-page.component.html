@@ -1,14 +1,14 @@
-<mat-card style="margin:auto; margin-top:220px; width: 600px;">
-    <h1 id="title" [ngStyle]="titleStyle">{{ title }}</h1>
-    <app-dynamic-form 
+<div class="card" style="margin:auto; margin-top:220px; width: 600px;">
+    <div class="card-header">
+      <h1 id="title" [ngStyle]="titleStyle">{{ title.getText() }}</h1>
+    </div>
+    <div class="card-body">
+    <app-dynamic-quiz 
       [mode]="mode"
       [questions]="questions"
-      [skipEnable]="skipEnable"
-      [iconBtnSubmit]="iconBtnSubmit"
-      [iconBtnSkip]="iconBtnSkip"
-      [textBtnSubmit]="textBtnSubmit"
-      [textBtnSkip]="textBtnSkip" 
-      [btnSubmitStyle]="btnSubmitStyle"
-      [btnSkipStyle]="btnSkipStyle">
-    </app-dynamic-form>
-</mat-card>
+      [backEnable]="false"
+      [nextButton]="nextButton"
+      [finishButton]="finishButton">
+    </app-dynamic-quiz>
+  </div>
+</div>

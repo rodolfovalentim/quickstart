@@ -22,22 +22,22 @@
         "screenType":"welcome",
         "next": "register",
         "title":{
-           "text":"Introdução evento teste",
+           "text":"",
            "color":"#00FF00",
            "fontPath":"path/font/test.ttf",
            "fontName":"Arial"
         },
         "button":{
-           "color":"#FF00FF",
-           "icon":"far-calendar",
+           "color": "#00FF00",
+           "icon":"fas-play",
            "text":{
-              "text":null,
-              "color":"#00FF00",
+              "text":"Começar!",
+              "color": null,
               "fontPath":"path/font/test.ttf",
-              "fontName":"Arial"
+              "fontName": null
            }
         },
-        "backgroundPath":"path/back/back.png"
+        "backgroundPath":"assets/images/background.png"
      },
      {
         "id":1,
@@ -45,21 +45,21 @@
         "next": "quiz",
         "title":{
            "text":"Cadastre suas informações",
-           "color":"#443355",
+           "color":null,
            "fontPath":null,
-           "fontName":"Arial"
+           "fontName":null
         },
         "submitButton":{
-           "color":"#336633",
+           "color":null,
            "icon":"far-calendar",
            "text":{
               "text":"Registrar",
-              "color":"#004433",
+              "color":null,
               "fontPath":null,
-              "fontName":"Tahoma"
+              "fontName":null
            }
         },
-        "backgroundPath":"path/back/backform.png",
+        "backgroundPath":"assets/images/background.png",
         "skip":true,
         "skipButton":{
            "color":"#333333",
@@ -74,37 +74,37 @@
         "questions": [
           {
             "question_type": "textbox",
-            "key": "Name",
+            "key": "name_key",
             "label": "Name",
-            "type": "Name",
+            "type": "text",
             "order": 1
            },
           {
             "question_type": "textbox",
-            "key": "Phone",
+            "key": "phone_key",
             "label": "Phone",
-            "type": "Phone",
+            "type": "text",
             "order": 1
           },
           {
             "question_type": "textbox",
-            "key": "City",
+            "key": "city_key",
             "label": "City",
-            "type": "City",
+            "type": "text",
             "order": 1
           },
           {
             "question_type": "textbox",
-            "key": "Email",
+            "key": "email_key",
             "label": "Email",
-            "type": "Email",
+            "type": "email",
             "order": 1
           },
           {
             "question_type": "textbox",
-            "key": "Birthday",
+            "key": "birthday_key",
             "label": "Birthday",
-            "type": "Birthday",
+            "type": "date",
             "order": 1
           }
         ]
@@ -112,7 +112,7 @@
      {
         "id":null,
         "screenType":"quiz",
-        "next": "jackpot",
+        "next": "end",
         "title":{
            "text":"Titulo do quiz",
            "color":"#334455",
@@ -227,7 +227,7 @@
               ]
            },
            {
-              "id":2,
+              "id":3,
               "question":"Qual destes é legalzin?",
               "question_type": "radio",
               "answer": 1,
@@ -238,7 +238,7 @@
               ]
            }
         ],
-        "backgroundPath":"path/back/backQuiz.png"
+        "backgroundPath":"assets/images/background.png"
      },
      {
         "id":null,
@@ -327,7 +327,7 @@
               "avaliableAmount":2
            }
         ],
-        "backgroundPath":"path/backSlot.png"
+        "backgroundPath":"assets/images/background.png"
      },
      {
         "id":null,
@@ -339,7 +339,7 @@
         },
         "screenType":"camera",
         "next": "end",
-        "backgroundPath":"pathBackground_cam.png",
+        "backgroundPath":"assets/images/background.png",
         "frames":[
            {
               "id":null,
@@ -427,7 +427,7 @@
         "id":null,
         "screenType":"end",
         "next": "welcome",
-        "backgroundPath":"path/back/backQuiz.png",
+        "backgroundPath":"assets/images/background.png",
         "title":{
            "text":"Obrigado por participar!",
            "color":"#123123",

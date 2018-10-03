@@ -1,16 +1,14 @@
-<mat-card style="margin:auto; margin-top:220px; width: 600px;">
-    <h1 style="text-align:center" [ngStyle]="titleStyle" >{{ title }}</h1>
-    <div class="example-container">
-      <app-dynamic-form 
-      [mode]="mode"
-      [questions]="questions"
-      [skipEnable]="skipEnable"
-      [iconBtnSubmit]="iconBtnSubmit"
-      [iconBtnSkip]="iconBtnSkip"
-      [textBtnSubmit]="textBtnSubmit"
-      [textBtnSkip]="textBtnSkip" 
-      [btnSubmitStyle]="btnSubmitStyle"
-      [btnSkipStyle]="btnSkipStyle">
+<div class="card" style="margin:auto; margin-top:220px; width: 600px;">
+  <div class="card-header">
+    <h1 style="text-align:center" [ngStyle]="title.getStyle()" >{{ title.getText() }}</h1>
+  </div>
+  <div class="card-body">
+    <app-dynamic-form 
+    [mode]="mode"
+    [questions]="questions"
+    [skipEnable]="skipEnable"
+    [btnSubmit]="btnSubmit"
+    [btnSkip]="btnSkip">
     </app-dynamic-form>
-    </div>
-</mat-card>
+  </div>
+  </div>

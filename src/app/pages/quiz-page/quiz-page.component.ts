@@ -6,6 +6,8 @@ import { QuestionService } from "../../services/question.service";
 import { AnswerService } from "../../services/answer.service";
 import { Subscription }   from 'rxjs';
 import { PageBaseComponent } from '../../components/page-base/page-base.component'
+import { TextModel } from '../../models/text-model';
+import { ButtonModel } from '../../models/button-model';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
@@ -24,15 +26,26 @@ export class QuizPageComponent extends PageBaseComponent {
   questions: any[];
   answers: any[];
   subscription: Subscription;
+  skipEnable: boolean
 
-  skipEnable: any;
-  iconBtnSubmit: any;
-  iconBtnSkip: any;
-  textBtnSubmit: any;
-  textBtnSkip: any;
-  btnSubmitStyle: any;
-  btnSkipStyle: any;
+  title: TextModel
+  welcomeTitle: TextModel
+  welcomeText: TextModel
+  successTitle: TextModel
+  successMessage: TextModel
+  failureTitle: TextModel
+  failureMessage: TextModel
+  startButton: ButtonModel
+  nextButton: ButtonModel
+  finishButton: ButtonModel
+  tryAgainButton: ButtonModel
+
   
+  answerTextColor: string;
+  answerBoxColor: string;
+  answerSelectedBoxColor: string;
+  containerColor: string;
+
   counter: number;
   
   mode = "stepper";
@@ -46,29 +59,38 @@ export class QuizPageComponent extends PageBaseComponent {
 
     super("quiz", config);
 
-    this.questions = this.questionService.getQuestions(this.pageInfo.questions);
-    console.log(this.questions)
-
-    this.skipEnable = false;
-    this.iconBtnSubmit = ['fa', 'home'];
-    this.iconBtnSkip = ['fa', 'home'];
-    this.textBtnSubmit = "Submit"
-    this.textBtnSkip = "Submit"
-    this.btnSubmitStyle = {}
-    this.btnSkipStyle = {}
+    this.title = new TextModel(this.pageInfo.title)
+    this.welcomeTitle = new TextModel(this.pageInfo.welcomeTitle)
+    this.welcomeText = new TextModel(this.pageInfo.welcomeText)
+    this.successTitle = new TextModel(this.pageInfo.successTitle)
+    this.successMessage = new TextModel(this.pageInfo.successMessage)
+    this.failureTitle = new TextModel(this.pageInfo.failureTitle)
+    this.failureMessage = new TextModel(this.pageInfo.failureMessage)
+    
+    this.startButton = new ButtonModel(this.pageInfo.startButton)
+    this.nextButton = new ButtonModel(this.pageInfo.nextButton)
+    this.finishButton = new ButtonModel(this.pageInfo.finishButton)
+    this.tryAgainButton = new ButtonModel(this.pageInfo.tryAgainButton)
+    
+    this.questions = questionService.getQuestions(this.pageInfo.questions)
+    this.skipEnable = this.pageInfo.skipEnable
     this.answers = [] 
 
     this.subscription = answerService.answersAnnounce$.subscribe(
       answer => { 
         this.answers.push(answer);
-        console.log(this.answers)
-        if(this.answers.length == this.questions.length){
-          router.navigateByUrl(this.next);
-        }
+        console.log("Eita", this.answers)
+        router.navigateByUrl(this.next);
       });
   }
 
   ngOnInit() {
+    console.log("Initialize Quiz Page")
+  }
+
+  ngOnDestroy() {
+    // prevent memory leak when component destroyed
+    this.subscription.unsubscribe()
   }
 
 }

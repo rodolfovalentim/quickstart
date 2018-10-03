@@ -21,4 +21,10 @@ export class ApiService {
       password: password
     });
   }
+
+  sendAnswer(data:string){
+    return this.http.post<LoginResultModel>(this.loginUrl, {
+      data: data
+    });
+  }
 }

@@ -10,12 +10,12 @@ import { ButtonModel } from '../../models/button-model';
 import {NgForm} from '@angular/forms';
 
 @Component({
-  selector: 'app-dynamic-form',
-  templateUrl: './dynamic-form.component.html',
-  styleUrls: ['./dynamic-form.component.scss'],
+  selector: 'app-dynamic-quiz',
+  templateUrl: './dynamic-quiz.component.html',
+  styleUrls: ['./dynamic-quiz.component.scss'],
   providers: [ QuestionControlService ]
 })
-export class DynamicFormComponent implements OnInit {
+export class DynamicQuizComponent implements OnInit {
 
   @Input() mode = "stack";
   @Input() questions: QuestionBase<any>[] = [];

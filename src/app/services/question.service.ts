@@ -18,7 +18,7 @@ export class QuestionService {
           new TextboxQuestion({
             key: question.key,
             label: question.label,
-            value: question.type,
+            value: question.placeholder || "",
             required: true,
             order: question.order
           })

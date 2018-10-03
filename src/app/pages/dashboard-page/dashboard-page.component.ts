@@ -11,11 +11,11 @@ import { Router } from '@angular/router';
 export class DashboardPageComponent implements OnInit {
  
   constructor(private api: ApiService, private config: ConfigService, private router: Router) { 
-    document.body.style.backgroundColor = "#222";
+    document.body.style.backgroundColor = "#fff";
   }
 
   ngOnInit() {
-    
+    console.log("Initialize Dashboard Page")    
   }
 
   goToBegin() {

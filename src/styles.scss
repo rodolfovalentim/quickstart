@@ -1,6 +1,9 @@
 @import "styles-variables";
+@import "~bootstrap/dist/css/bootstrap.css";
 @import '~bootstrap/scss/bootstrap-reboot';
 @import '~bootstrap/scss/bootstrap-grid';
 
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "../node_modules/primeicons/primeicons.css";
+@import '../node_modules/primeng/resources/primeng.min.css';
+@import "../node_modules/primeng/resources/themes/nova-light/theme.css";
 

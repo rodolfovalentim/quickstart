@@ -18,7 +18,8 @@ export class LoginPageComponent implements OnInit {
   constructor(private api: ApiService, private customer: CustomerService, private router: Router) { }
 
   ngOnInit() {
-    document.body.style.backgroundColor = "#222";
+    document.body.style.backgroundColor = "#f5f5f5";
+    console.log("Initialize Login Page")
   }
 
   tryLogin() {

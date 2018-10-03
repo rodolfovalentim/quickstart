@@ -1,13 +1,16 @@
-<div class="container content">
-    <div class="row" style="margin-top: 500px">
-        <div class="col-4"></div>
-        <div class="col-4" style="text-align: center">
-            <h1 [ngStyle]=titleStyle> {{ title }} </h1>
-            <button mat-raised-button color='warn' [ngStyle]=btnStyle (click)="goToNext()">
-                <fa-icon [icon]=icon></fa-icon>
-                {{ btn }}
-            </button>
-        </div>
-        <div class="col-4"></div>
+<div class="card" style="margin:auto; margin-top:220px; width: 600px;">
+    <div class="card-header">
+      <h1 style="text-align:center" [ngStyle]="title.getStyle()" >{{ title.getText() }}</h1>
+    </div>
+    <div class="card-body">
+        <p [ngStyle]="text.getStyle()">
+            {{ text.getText() }}
+        </p>
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-lg btn-primary btn-lg btn-block" [ngStyle]="button.getStyle()" (click)="goToNext()">
+            <fa-icon [icon]="button.getIcon()"></fa-icon>
+            {{ button.getText() }} 
+        </button>
     </div>
 </div>

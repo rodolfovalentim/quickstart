@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
 import { ConfigService } from '../../services/config.service';
+import { PageBaseComponent } from '../../components/page-base/page-base.component'
 
 @Component({
   selector: 'app-jackpot-page',
@@ -19,7 +20,7 @@ import { ConfigService } from '../../services/config.service';
     ])
   ]
 })
-export class JackpotPageComponent implements OnInit {
+export class JackpotPageComponent extends PageBaseComponent implements OnInit {
 
   title = 'quickstart';
   armor = '../../../assets/images/jackpot/jackpot.png'
@@ -33,9 +34,13 @@ export class JackpotPageComponent implements OnInit {
 
   sortImages = []
 
-  constructor() { }
+  constructor(private config: ConfigService) {
+    super("jackpot", config);
+  }
 
-  ngOnInit() { }
+  ngOnInit() {
+    console.log("Initialize Jackpot Page")
+  }
   
   toggleState() {
     this.sort()

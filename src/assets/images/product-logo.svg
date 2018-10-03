@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="52.584469mm"
+   height="30.630671mm"
+   viewBox="0 0 52.584469 30.630671"
+   version="1.1"
+   id="svg4832"
+   inkscape:version="0.92.1 r15371"
+   sodipodi:docname="logo.svg">
+  <defs
+     id="defs4826" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="92.451314"
+     inkscape:cy="-57.169417"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata4829">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-0.16608944,0.09657273)">
+    <g
+       style="fill:#222222;fill-opacity:1;stroke-width:1.37310779"
+       id="g4763"
+       transform="matrix(0.72827494,0,0,0.72827494,815.60226,-343.4019)"
+       inkscape:export-filename="C:\Users\rodol\Documents\GitHub\quickstart\src\assets\images\golden-logo.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:10.59919739px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#222222;fill-opacity:1;stroke:none;stroke-width:0.36330146"
+         x="-1094.8232"
+         y="507.14932"
+         id="text4563"><tspan
+           sodipodi:role="line"
+           id="tspan4561"
+           x="-1094.8232"
+           y="507.14932"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Anton;-inkscape-font-specification:Anton;text-align:start;text-anchor:start;fill:#222222;fill-opacity:1;stroke-width:0.36330146">Playground</tspan><tspan
+           sodipodi:role="line"
+           x="-1094.8232"
+           y="520.39832"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Anton;-inkscape-font-specification:Anton;text-align:start;text-anchor:start;fill:#222222;fill-opacity:1;stroke-width:0.36330146"
+           id="tspan4565" /></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.59755087px;line-height:0;font-family:Roboto;-inkscape-font-specification:'Roboto, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#222222;fill-opacity:1;stroke:none;stroke-width:0.36275765"
+         x="-1095.0917"
+         y="512.49811"
+         id="text4711"><tspan
+           sodipodi:role="line"
+           id="tspan4709"
+           x="-1095.0917"
+           y="512.49811"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.59755087px;font-family:Roboto;-inkscape-font-specification:'Roboto, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#222222;fill-opacity:1;stroke-width:0.36275765">Design e Interatividade</tspan></text>
+    </g>
+    <g
+       style="stroke-width:1.37502182"
+       id="g4756"
+       transform="matrix(0.72726116,0,0,0.72726116,751.82691,-370.03457)"
+       inkscape:export-filename="C:\Users\rodol\Documents\GitHub\quickstart\src\assets\images\golden-logo.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <path
+         sodipodi:nodetypes="ccccscccssscccsc"
+         inkscape:connector-curvature="0"
+         id="path4717"
+         d="m -1022.8405,534.86989 c 0,0 -6.0804,0.86862 -7.8176,-1.20272 -1.7373,-2.07135 -4.41,-6.88221 -1.8041,-9.42126 2.6059,-2.53908 6.0136,0.20045 5.88,-0.0668 -0.1337,-0.26726 -5.479,-2.87314 -5.0113,-7.0158 0.4677,-4.14269 3.0067,-6.74857 6.6149,-8.01809 3.6081,-1.26955 4.5436,0.33409 4.744,1.13588 0.2005,0.80182 1.4032,-1.9377 3.4077,-1.33633 2.0045,0.60135 3.8754,1.6036 4.2763,4.40993 0.1355,0.94837 -0.7981,4.55781 -1.5924,5.35698 -1.4009,1.40942 -4.2717,2.26022 -3.4189,2.26022 1.3364,0 5.0781,-1.87089 6.0136,0.20043 0.9354,2.07134 4.0758,0.86863 3.4077,4.34314 -0.6682,3.4745 0.6013,7.95126 -4.5436,7.95126 -2.5656,1.84419 -2.6806,1.9187 -5.2823,2.0795 -3.5206,0.2176 -4.874,-0.67631 -4.874,-0.67631 z"
+         style="fill:#88aa00;fill-opacity:1;stroke:none;stroke-width:0.36380786px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         style="fill:#502d16;fill-opacity:1;stroke:none;stroke-width:0.36380786px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m -1023.2288,549.86607 h 2.9293 l -1.2757,-17.05618 8.5467,-4.42329 c 0,0 -9.4916,3.52559 -9.3971,2.29718 0.094,-1.22844 1.1339,-16.72545 1.1339,-16.72545 l -2.4568,16.81993 -4.7038,-2.39641 4.4203,5.42023 -1.323,16.06399 z"
+         id="path4715"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccccccccc" />
+      <g
+         style="stroke-width:1.37502182"
+         id="g4783">
+        <path
+           sodipodi:nodetypes="ccc"
+           style="fill:#1c1008;fill-opacity:1;stroke:#1c1008;stroke-width:0.36438078;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m -1018.5794,530.20052 0.5012,0.87696 3.8736,10.85107"
+           id="path4719"
+           inkscape:connector-curvature="0" />
+        <path
+           sodipodi:nodetypes="ccc"
+           style="fill:#1c1008;fill-opacity:1;stroke:#1c1008;stroke-width:0.36438078;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m -1015.9209,529.35812 0.2757,0.50947 4.0573,11.1601"
+           id="path4719-2"
+           inkscape:connector-curvature="0" />
+        <path
+           style="fill:#1c1008;fill-opacity:1;stroke:#1c1008;stroke-width:0.36380786px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+           d="m -1014.7126,541.43247 -0.024,1.84263 3.6498,-1.65363 0.024,-1.86625 z"
+           id="path4736"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="ccccc" />
+      </g>
+    </g>
+  </g>
+</svg>
