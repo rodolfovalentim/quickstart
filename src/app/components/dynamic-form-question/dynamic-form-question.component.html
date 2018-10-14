@@ -1,28 +1,25 @@
 <div [ngSwitch]="question.controlType" [formGroup]="form">
-  <div *ngSwitchCase="'personalData'">
-    <label [attr.for]="question.key">{{question.label}}</label>
-    <input class="form-control form-control-lg" 
-    [formControlName]="question.key" 
-    [id]="question.key" 
-    [matKeyboard]="question.keyboard">
-  </div>
-  
-  <div *ngSwitchCase="'textbox'">
-    <label [attr.for]="question.key">{{question.label}}</label>
-    <input class="form-control form-control-lg" [formControlName]="question.key" [id]="question.key" [matKeyboard]="question.keyboard">
+  <div class="form-group row" *ngSwitchCase="'textbox'">
+    <label class="col-sm-2 col-form-label" [attr.for]="question.key">{{question.label}}</label>
+    <div class="col-sm-10">
+      <input class="form-control" [formControlName]="question.key" [id]="question.key" [matKeyboard]="question.keyboard">
+    </div>
   </div>
 
   <select [formGroup]="form" class="form-control" [id]="question.key" *ngSwitchCase="'dropdown'">
-    <label [attr.for]="question.key"><b>{{question.label}}</b></label>
+    <label [attr.for]="question.key"><b>{{ question.label }}</b></label>
     <option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</option>
   </select>
 
   <div *ngSwitchCase="'radio'" class="form-check">
-    <label [attr.for]="question.key"><b>{{question.label}}</b></label>
-    <div *ngFor="let opt of question.options" style="margin-top: 10px;">
-      <label class="form-check-label">
-        <input type="radio" class="form-check-input" [formControlName]="question.key" [value]="opt.key">{{opt.value}}
-      </label>
+    <label [attr.for]="question.key"><b>{{ question.label }}</b></label>
+    <div class="card" *ngFor="let opt of question.options" style="margin-top: 10px">
+      <div class="card-body" [ngStyle]="(selected(question.key, opt.key)) ? selectedStyle : idleStyle">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" [formControlName]="question.key" [value]="opt.key">
+          {{ opt.value }}
+        </label>
+      </div>
     </div>
   </div>
 

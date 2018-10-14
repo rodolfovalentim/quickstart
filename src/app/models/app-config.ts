@@ -47,13 +47,18 @@ interface Screen {
   takeNewPicButton?: SubmitButton;
   backButton?: SubmitButton;
   confirmButton?: SubmitButton;
-  thankyouMensage?: Text; 
+  thankyouMensage?: Text;
   routeButton?: any;
   dropboxEnabled?: boolean;
   emailEnabled?: boolean;
   facebookEnabled?: boolean;
   printEnabled?: boolean;
   text?: Text;
+  askName?: boolean;
+  askPhone?: boolean;
+  askCity?: boolean;
+  askEmail?: boolean;
+  askBirthday?: boolean;
 }
 
 interface Frame {
@@ -85,13 +90,14 @@ interface SpinButton {
 }
 
 interface Question {
-  question_type?: string;
+  questionLabel?: string;
+  questionType?: string;
   key?: string;
   label?: string;
   type?: string;
   placeholder?: string;
   order?: number;
-  id?: any;
+  id?: number;
   question?: string;
   options?: Options[];
   answer: number;

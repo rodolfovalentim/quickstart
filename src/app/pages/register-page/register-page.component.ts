@@ -8,7 +8,6 @@ import { Subscription }   from 'rxjs';
 import { PageBaseComponent } from '../../components/page-base/page-base.component' 
 import { TextModel } from '../../models/text-model';
 import { ButtonModel } from '../../models/button-model';
- 
 
 @Component({
   selector: 'app-register-page',

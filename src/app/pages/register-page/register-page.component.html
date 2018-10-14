@@ -1,14 +1,11 @@
-<div class="card" style="margin:auto; margin-top:220px; width: 600px;">
-  <div class="card-header">
-    <h1 style="text-align:center" [ngStyle]="title.getStyle()" >{{ title.getText() }}</h1>
+<div class="container align-items-center text-center" style="margin-top:200px">
+  <div class="card border-0" style="margin:auto; width: 600px;">
+    <div class="card-header">
+      <h1 style="text-align:center" [ngStyle]="title.getStyle()">{{ title.getText() }}</h1>
+    </div>
+    <div class="card-body">
+      <app-dynamic-form [questions]="questions" [skipEnable]="skipEnable" [btnSubmit]="btnSubmit" [btnSkip]="btnSkip">
+      </app-dynamic-form>
+    </div>
   </div>
-  <div class="card-body">
-    <app-dynamic-form 
-    [mode]="mode"
-    [questions]="questions"
-    [skipEnable]="skipEnable"
-    [btnSubmit]="btnSubmit"
-    [btnSkip]="btnSkip">
-    </app-dynamic-form>
-  </div>
-  </div>
+</div>

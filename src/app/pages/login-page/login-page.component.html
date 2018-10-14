@@ -1,18 +1,24 @@
-
-<div class="card form-signin hgroup">
-  <img id="product-logo" style="text-align: center" src="assets/images/product-logo.svg">
+<div class="jumbotron d-flex align-items-center">
+  <div class="container text-center">
+    <div class="card border-0 form-signin">
+      <img id="product-logo" style="text-align: center" src="assets/images/product-logo.svg">
+        
+      <input id="inputEvent" 
+      class="form-control" 
+      [(ngModel)]="eventId" 
+      [matKeyboard]="'Portuguese (Brazil)'" 
+      autofocus>
     
-  <input id="inputEvent" 
-  class="form-control" 
-  [(ngModel)]="eventId" 
-  [matKeyboard]="'Portuguese (Brazil)'" 
-  autofocus>
-
-  <input id="inputPassword" 
-  class="form-control" 
-  [(ngModel)]="password"
-  [matKeyboard]="'Portuguese (Brazil)'" 
-  type="password" autofocus>
-  
-  <button class="btn btn-primary btn-block mt-3" type="submit" (click)="tryLogin()">Login</button>
+      <input id="inputPassword" 
+      class="form-control" 
+      [(ngModel)]="password"
+      [matKeyboard]="'Portuguese (Brazil)'" 
+      type="password" autofocus>
+      
+      <button class="btn btn-primary btn-block mt-3" type="submit" (click)="tryLogin()">Login</button>
+    </div>
+  </div>
 </div>
+
+
+

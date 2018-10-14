@@ -14,11 +14,16 @@ export class WelcomePageComponent extends PageBaseComponent implements OnInit {
 
   title: TextModel
   btn: ButtonModel
+  contentStyle: { 
+    'margin-top': string
+  }
 
   constructor(private config: ConfigService, private router : Router) {
     super("welcome", config)  
-    this.btn = new ButtonModel(this.pageInfo.button);
-    this.title = new TextModel(this.pageInfo.title);
+    this.btn = new ButtonModel(this.pageInfo.button)
+    this.title = new TextModel(this.pageInfo.title)
+    
+    this.contentStyle = { "margin-top":  "700px" }
   }
 
   goToNext(){

@@ -17,19 +17,11 @@ import {NgForm} from '@angular/forms';
 })
 export class DynamicFormComponent implements OnInit {
 
-  @Input() mode = "stack";
   @Input() questions: QuestionBase<any>[] = [];
   
-  // for stack mode
   @Input() btnSubmit?: ButtonModel;
   @Input() btnSkip?: ButtonModel;
   @Input() skipEnable? = true;
-
-  // for stepper mode
-  @Input() backEnable? = true;  
-  @Input() backButton?: ButtonModel;
-  @Input() nextButton?: ButtonModel;
-  @Input() finishButton?: ButtonModel;
 
   form: FormGroup;
   payLoad = '';

@@ -24,7 +24,7 @@ export class EndPageComponent extends PageBaseComponent implements OnInit {
 
     console.log(this.pageInfo)
 
-    this.title = new TextModel(this.pageInfo.title);
+    this.title = new TextModel(this.pageInfo.title)
     this.text = new TextModel(this.pageInfo.text)
     this.button = new ButtonModel(this.pageInfo.button)  
   }

@@ -17,7 +17,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSelectModule } from '@angular/material/select';
-import {SplitButtonModule} from 'primeng/splitbutton';
+import { SplitButtonModule } from 'primeng/splitbutton';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -32,7 +32,7 @@ import { EndPageComponent } from './pages/end-page/end-page.component';
 
 import { AuthGuardService } from './auth.guard';
 
-import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
+
 import { DynamicFormQuestionComponent } from './components/dynamic-form-question/dynamic-form-question.component';
 
 import { APP_INITIALIZER } from '@angular/core';
@@ -41,6 +41,7 @@ import { ConfigService } from './services/config.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PageBaseComponent } from './components/page-base/page-base.component';
 import { DynamicQuizComponent } from './components/dynamic-quiz/dynamic-quiz.component';
+import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
 
 export function initializeApp(appConfig: ConfigService) {
   return () => appConfig.load();
@@ -73,10 +74,10 @@ const customLayouts: IKeyboardLayouts = {
     QuizPageComponent,
     WelcomePageComponent,
     DynamicFormComponent,
+    DynamicQuizComponent,
     DynamicFormQuestionComponent,
     PageBaseComponent,
-    EndPageComponent,
-    DynamicQuizComponent
+    EndPageComponent
   ],
   imports: [
     BrowserModule,

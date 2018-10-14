@@ -1,456 +1,513 @@
 {
-  "id":1,
-  "name":"EventoTesteGeral",
-  "eventKey":"XYZ",
-  "outputConfig":{
-     "dropboxToken":"aaaaaazzzzzzxxxxxxxx",
-     "facebookToken":"aaaxxxxxsssss",
-     "sendGridToken":"aaaaaazzzzzssssss",
-     "emailFrom":"goku@gmail.com",
-     "emailSubject":"Email do goku",
-     "emailBody":"Oi eu sou goku!"
+  "id": 1,
+  "name": "EventoTesteGeral",
+  "eventKey": "XYZ",
+  "outputConfig": {
+    "dropboxToken": "aaaaaazzzzzzxxxxxxxx",
+    "facebookToken": "aaaxxxxxsssss",
+    "sendGridToken": "aaaaaazzzzzssssss",
+    "emailFrom": "goku@gmail.com",
+    "emailSubject": "Email do goku",
+    "emailBody": "Oi eu sou goku!"
   },
-  "api":{
+  "api": {
     "sendPhoto": "http://localhost:3000/api/v1/sendPhoto",
     "sendEmail": "http://localhost:3000/api/v1/sendEmail",
     "addUser": "http://localhost:3000/api/v1/addUser",
     "updateConfig": "http://localhost:3000/api/v1/updateConfig"
   },
-  "screens":[
-     {
-        "id":1,
-        "screenType":"welcome",
-        "next": "register",
-        "title":{
-           "text":"",
-           "color":"#00FF00",
-           "fontPath":"path/font/test.ttf",
-           "fontName":"Arial"
+  "screens": [
+    {
+      "id": 1,
+      "screenType": "welcome",
+      "next": "register",
+      "title": {
+        "text": "",
+        "color": "#00FF00",
+        "fontPath": "path/font/test.ttf",
+        "fontName": "Arial"
+      },
+      "button": {
+        "color": null,
+        "icon": "fas-play",
+        "text": {
+          "text": "Começar!",
+          "color": null,
+          "fontPath": "path/font/test.ttf",
+          "fontName": null
+        }
+      },
+      "backgroundPath": "assets/images/background.png"
+    },
+    {
+      "id": 1,
+      "screenType": "register",
+      "next": "quiz",
+      "title": {
+        "text": "Cadastre suas informações",
+        "color": null,
+        "fontPath": null,
+        "fontName": null
+      },
+      "submitButton": {
+        "color": null,
+        "icon": "far-calendar",
+        "text": {
+          "text": "Registrar",
+          "color": null,
+          "fontPath": null,
+          "fontName": null
+        }
+      },
+      "backgroundPath": "assets/images/background.png",
+      "skip": true,
+      "skipButton": {
+        "color": "#333333",
+        "icon": "far-calendar",
+        "text": {
+          "text": "Pular",
+          "color": "#004433",
+          "fontPath": null,
+          "fontName": "Tahoma"
+        }
+      },
+      "questions": [
+        {
+          "questionType": "textbox",
+          "key": "name_key",
+          "label": "Name",
+          "type": "text",
+          "order": 1
         },
-        "button":{
-           "color": "#00FF00",
-           "icon":"fas-play",
-           "text":{
-              "text":"Começar!",
-              "color": null,
-              "fontPath":"path/font/test.ttf",
-              "fontName": null
-           }
+        {
+          "questionType": "textbox",
+          "key": "phone_key",
+          "label": "Phone",
+          "type": "text",
+          "order": 1
         },
-        "backgroundPath":"assets/images/background.png"
-     },
-     {
-        "id":1,
-        "screenType":"register",
-        "next": "quiz",
-        "title":{
-           "text":"Cadastre suas informações",
-           "color":null,
-           "fontPath":null,
-           "fontName":null
+        {
+          "questionType": "textbox",
+          "key": "city_key",
+          "label": "City",
+          "type": "text",
+          "order": 1
         },
-        "submitButton":{
-           "color":null,
-           "icon":"far-calendar",
-           "text":{
-              "text":"Registrar",
-              "color":null,
-              "fontPath":null,
-              "fontName":null
-           }
+        {
+          "questionType": "textbox",
+          "key": "email_key",
+          "label": "Email",
+          "type": "email",
+          "order": 1
         },
-        "backgroundPath":"assets/images/background.png",
-        "skip":true,
-        "skipButton":{
-           "color":"#333333",
-           "icon":"far-calendar",
-           "text":{
-              "text":"Pular",
-              "color":"#004433",
-              "fontPath":null,
-              "fontName":"Tahoma"
-           }
+        {
+          "questionType": "textbox",
+          "key": "birthday_key",
+          "label": "Birthday",
+          "type": "date",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": null,
+      "screenType": "quiz",
+      "next": "camera",
+      "title": {
+        "text": "Titulo do quiz",
+        "color": "#334455",
+        "fontPath": null,
+        "fontName": null
+      },
+      "welcomeTitle": {
+        "text": "Começar",
+        "color": "#334455",
+        "fontPath": null,
+        "fontName": null
+      },
+      "welcomeText": {
+        "text": "Vamos começar?",
+        "color": "#334455",
+        "fontPath": null,
+        "fontName": null
+      },
+      "startButton": {
+        "color": "#234234",
+        "icon": "far-calendar",
+        "text": {
+          "text": "Iniciar",
+          "color": "#123123",
+          "fontPath": null,
+          "fontName": null
+        }
+      },
+      "nextButton": {
+        "color": "#234234",
+        "icon": "far-calendar",
+        "text": {
+          "text": "Proximo",
+          "color": "#123123",
+          "fontPath": null,
+          "fontName": null
+        }
+      },
+      "finishButton": {
+        "color": "#234234",
+        "icon": "far-calendar",
+        "text": {
+          "text": "Terminar",
+          "color": "#123123",
+          "fontPath": null,
+          "fontName": null
+        }
+      },
+      "answerTextColor": "#555555",
+      "answerBoxColor": "#555553",
+      "answerSelectedBoxColor": "#552255",
+      "containerColor": "#555211",
+      "successTitle": {
+        "text": "PARABENS VOCE CONSEGUIU",
+        "color": "#334455",
+        "fontPath": null,
+        "fontName": null
+      },
+      "successMessage": {
+        "text": "Voce acertou todas as perguntas!",
+        "color": "#334455",
+        "fontPath": null,
+        "fontName": null
+      },
+      "failureTitle": {
+        "text": "Nao foi dessa vez",
+        "color": "#334455",
+        "fontPath": null,
+        "fontName": null
+      },
+      "failureMessage": {
+        "text": "Infelizmente você não ganhou",
+        "color": "#334455",
+        "fontPath": null,
+        "fontName": null
+      },
+      "tryAgainButton": {
+        "color": "#234234",
+        "icon": "far-calendar",
+        "text": {
+          "text": "Tentar novamente",
+          "color": "#123123",
+          "fontPath": null,
+          "fontName": null
+        }
+      },
+      "shuffle": true,
+      "enableScore": true,
+      "numPresentedQuestions": 2,
+      "questions": [
+        {
+          "id": 1,
+          "questionLabel": null,
+          "question": "Qual destes é filho de Son Goku?",
+          "questionType": "radio",
+          "answer": 1,
+          "options": [
+            {
+              "key": 1,
+              "value": "Gohan"
+            },
+            {
+              "key": 2,
+              "value": "Pan"
+            },
+            {
+              "key": 3,
+              "value": "Picolo"
+            },
+            {
+              "key": 4,
+              "value": "Picolo"
+            }
+          ]
         },
-        "questions": [
-          {
-            "question_type": "textbox",
-            "key": "name_key",
-            "label": "Name",
-            "type": "text",
-            "order": 1
-           },
-          {
-            "question_type": "textbox",
-            "key": "phone_key",
-            "label": "Phone",
-            "type": "text",
-            "order": 1
+        {
+          "id": 2,
+          "questionLabel": null,
+          "question": "Qual destes é filho de puta?",
+          "questionType": "radio",
+          "answer": 1,
+          "options": [
+            {
+              "key": 1,
+              "value": "Bolsonaro"
+            },
+            {
+              "key": 2,
+              "value": "Bolsonaro"
+            },
+            {
+              "key": 3,
+              "value": "Bolsonaro"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "questionLabel": null,
+          "question": "Qual destes é filho de puta?",
+          "questionType": "radio",
+          "answer": 1,
+          "options": [
+            {
+              "key": 1,
+              "value": "Bolsonaro"
+            },
+            {
+              "key": 2,
+              "value": "Bolsonaro"
+            },
+            {
+              "key": 3,
+              "value": "Bolsonaro"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "questionLabel": null,
+          "question": "Qual destes é legalzin?",
+          "questionType": "radio",
+          "answer": 1,
+          "options": [
+            {
+              "key": 1,
+              "value": "Ciro Gomes"
+            },
+            {
+              "key": 2,
+              "value": "Ciro Gomes"
+            },
+            {
+              "key": 3,
+              "value": "Ciro Gomes"
+            }
+          ]
+        }
+      ],
+      "backgroundPath": "assets/images/background.png"
+    },
+    {
+      "id": null,
+      "screenType": "jackpot",
+      "next": "camera",
+      "title": {
+        "text": "Show de premios casas bahia",
+        "color": "#123123",
+        "fontPath": null,
+        "fontName": "Arial"
+      },
+      "finishButton": {
+        "color": "#234234",
+        "icon": "far-calendar",
+        "text": {
+          "text": "Finalizar",
+          "color": "#123123",
+          "fontPath": null,
+          "fontName": "Tahoma"
+        }
+      },
+      "spinButton": {
+        "color": null,
+        "icon": "far-calendar",
+        "text": {
+          "text": "Rodar",
+          "color": "#234234",
+          "fontPath": null,
+          "fontName": "Tahoma"
+        }
+      },
+      "tryAgainButton": {
+        "color": null,
+        "icon": "far-calendar",
+        "text": {
+          "text": "Rodar",
+          "color": "#234234",
+          "fontPath": null,
+          "fontName": "Tahoma"
+        }
+      },
+      "winText": {
+        "text": "Parabéns, você ganhou esse belissimo premio!",
+        "color": "#123123",
+        "fontPath": null,
+        "fontName": "Arial"
+      },
+      "loseText": {
+        "text": "Tente novamente mais tarde. Aproveite e tire uma foto",
+        "color": "#123123",
+        "fontPath": null,
+        "fontName": "Arial"
+      },
+      "winTitle": {
+        "text": "Tente novamente mais tarde. Aproveite e tire uma foto",
+        "color": "#123123",
+        "fontPath": null,
+        "fontName": "Arial"
+      },
+      "loseTitle": {
+        "text": "Tente novamente mais tarde. Aproveite e tire uma foto",
+        "color": "#123123",
+        "fontPath": null,
+        "fontName": "Arial"
+      },
+      "slots": [
+        {
+          "id": null,
+          "imagePath": "logo_bone.png",
+          "prize": "BONÉ",
+          "probability": 0.7,
+          "avaliableAmount": 500
+        },
+        {
+          "id": null,
+          "imagePath": "logo_carro.png",
+          "prize": "CARRO",
+          "probability": 0.1,
+          "avaliableAmount": 5
+        },
+        {
+          "id": null,
+          "imagePath": "logo_aviao.png",
+          "prize": "AVIÃO",
+          "probability": 0.1,
+          "avaliableAmount": 2
+        }
+      ],
+      "backgroundPath": "assets/images/background.png"
+    },
+    {
+      "id": null,
+      "title": {
+        "text": "Show de premios casas bahia",
+        "color": "#123123",
+        "fontPath": null,
+        "fontName": "Arial"
+      },
+      "screenType": "camera",
+      "next": "end",
+      "backgroundPath": "assets/images/background.png",
+      "frames": [
+        {
+          "id": null,
+          "path": "logo_frame1.png",
+          "cropFrom": {
+            "x": 30,
+            "y": 40,
+            "w": 20,
+            "h": 10
           },
-          {
-            "question_type": "textbox",
-            "key": "city_key",
-            "label": "City",
-            "type": "text",
-            "order": 1
-          },
-          {
-            "question_type": "textbox",
-            "key": "email_key",
-            "label": "Email",
-            "type": "email",
-            "order": 1
-          },
-          {
-            "question_type": "textbox",
-            "key": "birthday_key",
-            "label": "Birthday",
-            "type": "date",
-            "order": 1
+          "cropTo": {
+            "x": 303,
+            "y": 404,
+            "w": 202,
+            "h": 101
           }
-        ]
-     },
-     {
-        "id":null,
-        "screenType":"quiz",
-        "next": "end",
-        "title":{
-           "text":"Titulo do quiz",
-           "color":"#334455",
-           "fontPath":null,
-           "fontName":"Tahoma"
         },
-        "welcomeTitle":{
-           "text":"Começar",
-           "color":"#334455",
-           "fontPath":null,
-           "fontName":"Tahoma"
-        },
-        "welcomeText":{
-           "text":"Vamos começar?",
-           "color":"#334455",
-           "fontPath":null,
-           "fontName":"Tahoma"
-        },
-        "startButton":{
-           "color":"#234234",
-           "icon":"far-calendar",
-           "text":{
-              "text":"Iniciar",
-              "color":"#123123",
-              "fontPath":null,
-              "fontName":"Tahoma"
-           }
-        },
-        "nextButton":{
-           "color":"#234234",
-           "icon":"far-calendar",
-           "text":{
-              "text":"Proximo",
-              "color":"#123123",
-              "fontPath":null,
-              "fontName":"Tahoma"
-           }
-        },
-        "finishButton":{
-           "color":"#234234",
-           "icon":"far-calendar",
-           "text":{
-              "text":"Proximo",
-              "color":"#123123",
-              "fontPath":null,
-              "fontName":"Tahoma"
-           }
-        },
-        "answerTextColor":"#555555",
-        "answerBoxColor":"#555553",
-        "answerSelectedBoxColor":"#552255",
-        "containerColor":"#555211",
-        "successTitle":{
-           "text":"PARABENS VOCE CONSEGUIU",
-           "color":"#334455",
-           "fontPath":null,
-           "fontName":"Tahoma"
-        },
-        "successMessage":{
-           "text":"Voce acertou todas as perguntas!",
-           "color":"#334455",
-           "fontPath":null,
-           "fontName":"Tahoma"
-        },
-        "failureTitle":{
-           "text":"Nao foi dessa vez",
-           "color":"#334455",
-           "fontPath":null,
-           "fontName":"Tahoma"
-        },
-        "failureMessage":{
-           "text":"Infelizmente você não ganhou",
-           "color":"#334455",
-           "fontPath":null,
-           "fontName":"Tahoma"
-        },
-        "tryAgainButton":{
-           "color":"#234234",
-           "icon":"far-calendar",
-           "text":{
-              "text":"Tentar novamente",
-              "color":"#123123",
-              "fontPath":null,
-              "fontName":"Tahoma"
-           }
-        },
-        "shuffle":true,
-        "enableScore":true,
-        "numPresentedQuestions":2,
-        "questions":[
-           {
-              "id":1,
-              "question":"Qual destes é filho de Son Goku?",
-              "question_type": "radio",
-              "answer": 1,
-              "options":[
-                 { "key":1, "value":"Gohan" },
-                 { "key":2, "value":"Pan" },
-                 { "key":3, "value":"Picolo" },
-                 { "key":4, "value":"Picolo" }
-              ]
-           },
-           {
-              "id":2,
-              "question":"Qual destes é filho de puta?",
-              "question_type": "radio",
-              "answer": 1,
-              "options":[
-                 { "key":1, "value":"Bolsonaro" },
-                 { "key":2, "value":"Bolsonaro" },
-                 { "key":3, "value":"Bolsonaro" }
-              ]
-           },
-           {
-              "id":3,
-              "question":"Qual destes é legalzin?",
-              "question_type": "radio",
-              "answer": 1,
-              "options":[
-                 { "key":1, "value":"Ciro Gomes" },
-                 { "key":2, "value":"Ciro Gomes" },
-                 { "key":3, "value":"Ciro Gomes" }
-              ]
-           }
-        ],
-        "backgroundPath":"assets/images/background.png"
-     },
-     {
-        "id":null,
-        "screenType":"jackpot",
-        "next": "camera",
-        "title":{
-           "text":"Show de premios casas bahia",
-           "color":"#123123",
-           "fontPath":null,
-           "fontName":"Arial"
-        },
-        "finishButton":{
-           "color":"#234234",
-           "icon":"far-calendar",
-           "text":{
-              "text":"Finalizar",
-              "color":"#123123",
-              "fontPath":null,
-              "fontName":"Tahoma"
-           }
-        },
-        "spinButton":{
-           "color":null,
-           "icon":"far-calendar",
-           "text":{
-              "text":"Rodar",
-              "color":"#234234",
-              "fontPath":null,
-              "fontName":"Tahoma"
-           }
-        },
-        "tryAgainButton":{
-           "color":null,
-           "icon":"far-calendar",
-           "text":{
-              "text":"Rodar",
-              "color":"#234234",
-              "fontPath":null,
-              "fontName":"Tahoma"
-           }
-        },
-        "winText":{
-           "text":"Parabéns, você ganhou esse belissimo premio!",
-           "color":"#123123",
-           "fontPath":null,
-           "fontName":"Arial"
-        },
-        "loseText":{
-           "text":"Tente novamente mais tarde. Aproveite e tire uma foto",
-           "color":"#123123",
-           "fontPath":null,
-           "fontName":"Arial"
-        },
-        "winTitle":{
-           "text":"Tente novamente mais tarde. Aproveite e tire uma foto",
-           "color":"#123123",
-           "fontPath":null,
-           "fontName":"Arial"
-        },
-        "loseTitle":{
-           "text":"Tente novamente mais tarde. Aproveite e tire uma foto",
-           "color":"#123123",
-           "fontPath":null,
-           "fontName":"Arial"
-        },
-        "slots":[
-           {
-              "id":null,
-              "imagePath":"logo_bone.png",
-              "prize":"BONÉ",
-              "probability":0.7,
-              "avaliableAmount":500
-           },
-           {
-              "id":null,
-              "imagePath":"logo_carro.png",
-              "prize":"CARRO",
-              "probability":0.1,
-              "avaliableAmount":5
-           },
-           {
-              "id":null,
-              "imagePath":"logo_aviao.png",
-              "prize":"AVIÃO",
-              "probability":0.1,
-              "avaliableAmount":2
-           }
-        ],
-        "backgroundPath":"assets/images/background.png"
-     },
-     {
-        "id":null,
-        "title":{
-          "text":"Show de premios casas bahia",
-          "color":"#123123",
-          "fontPath":null,
-          "fontName":"Arial"
-        },
-        "screenType":"camera",
-        "next": "end",
-        "backgroundPath":"assets/images/background.png",
-        "frames":[
-           {
-              "id":null,
-              "path":"logo_frame1.png",
-              "cropFrom":{
-                 "x":30,
-                 "y":40,
-                 "w":20,
-                 "h":10
-              },
-              "cropTo":{
-                 "x":303,
-                 "y":404,
-                 "w":202,
-                 "h":101
-              }
-           },
-           {
-              "id":null,
-              "path":"logo_frame2.png",
-              "cropFrom":{
-                 "x":310,
-                 "y":410,
-                 "w":210,
-                 "h":110
-              },
-              "cropTo":{
-                 "x":3203,
-                 "y":4204,
-                 "w":2202,
-                 "h":1201
-              }
-           }
-        ],
-        "takePicButton":{
-           "color":"#234234",
-           "icon":"far-calendar",
-           "text":{
-              "text":"Tira foto",
-              "color":"#000",
-              "fontPath":null,
-              "fontName":"Tahoma"
-           }
-        },
-        "takeNewPicButton":{
-           "color":"#234234",
-           "icon":"far-calendar",
-           "text":{
-              "text":"Tira outra foto",
-              "color":"#000",
-              "fontPath":null,
-              "fontName":"Tahoma"
-           }
-        },"backButton":{
-           "color":"#234234",
-           "icon":"far-calendar",
-           "text":{
-              "text":"Voltar",
-              "color":"#000",
-              "fontPath":null,
-              "fontName":"Tahoma"
-           }
-        },"confirmButton":{
-           "color":"#234234",
-           "icon":"far-calendar",
-           "text":{
-              "text":"Salvar",
-              "color":"#000",
-              "fontPath":null,
-              "fontName":"Tahoma"
-           }
-        },"thankyouMensage":{
-           "text":"Sua participação é muito importante para nós!",
-           "color":"#000",
-           "fontPath":null,
-           "fontName":"Arial"
-        },
-        "routeButton":null,
-        "dropboxEnabled":true,
-        "emailEnabled":true,
-        "facebookEnabled":false,
-        "printEnabled":false
-     },
-     {
-        "id":null,
-        "screenType":"end",
-        "next": "welcome",
-        "backgroundPath":"assets/images/background.png",
-        "title":{
-           "text":"Obrigado por participar!",
-           "color":"#123123",
-           "fontPath":null,
-           "fontName":"Arial"
-        },
-        "text":{
-           "text":"Sua participação é muito importante para nós!",
-           "color":"#123123",
-           "fontPath":null,
-           "fontName":"Arial"
-        },
-        "button":{
-           "color":"#234234",
-           "icon":"far-calendar",
-           "text":{
-              "text":"Proximo",
-              "color":"#123123",
-              "fontPath":null,
-              "fontName":"Tahoma"
-           }
-        },
-        "containerColor":"#333444"
-     }
+        {
+          "id": null,
+          "path": "logo_frame2.png",
+          "cropFrom": {
+            "x": 310,
+            "y": 410,
+            "w": 210,
+            "h": 110
+          },
+          "cropTo": {
+            "x": 3203,
+            "y": 4204,
+            "w": 2202,
+            "h": 1201
+          }
+        }
+      ],
+      "takePicButton": {
+        "color": "#234234",
+        "icon": "far-calendar",
+        "text": {
+          "text": "Tira foto",
+          "color": "#000",
+          "fontPath": null,
+          "fontName": "Tahoma"
+        }
+      },
+      "takeNewPicButton": {
+        "color": "#234234",
+        "icon": "far-calendar",
+        "text": {
+          "text": "Tira outra foto",
+          "color": "#000",
+          "fontPath": null,
+          "fontName": "Tahoma"
+        }
+      },
+      "backButton": {
+        "color": "#234234",
+        "icon": "far-calendar",
+        "text": {
+          "text": "Voltar",
+          "color": "#000",
+          "fontPath": null,
+          "fontName": "Tahoma"
+        }
+      },
+      "confirmButton": {
+        "color": "#234234",
+        "icon": "far-calendar",
+        "text": {
+          "text": "Salvar",
+          "color": "#000",
+          "fontPath": null,
+          "fontName": "Tahoma"
+        }
+      },
+      "thankyouMensage": {
+        "text": "Sua participação é muito importante para nós!",
+        "color": "#000",
+        "fontPath": null,
+        "fontName": "Arial"
+      },
+      "routeButton": null,
+      "dropboxEnabled": true,
+      "emailEnabled": true,
+      "facebookEnabled": false,
+      "printEnabled": false
+    },
+    {
+      "id": null,
+      "screenType": "end",
+      "next": "welcome",
+      "backgroundPath": "assets/images/background.png",
+      "title": {
+        "text": "Obrigado por participar!",
+        "color": "#123123",
+        "fontPath": null,
+        "fontName": "Arial"
+      },
+      "text": {
+        "text": "Sua participação é muito importante para nós!",
+        "color": "#123123",
+        "fontPath": null,
+        "fontName": "Arial"
+      },
+      "button": {
+        "color": "#234234",
+        "icon": "far-calendar",
+        "text": {
+          "text": "Proximo",
+          "color": "#123123",
+          "fontPath": null,
+          "fontName": "Tahoma"
+        }
+      },
+      "containerColor": "#333444"
+    }
   ]
 }

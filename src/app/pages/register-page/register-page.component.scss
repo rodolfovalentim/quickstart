@@ -1,36 +1,10 @@
-.example-container {
-    display: flex;
-    flex-direction: column;
+.jumbotron{
+    height: 100vh;
+    margin-bottom: 0rem;
+    background: none;
 }
 
-.example-container > * {
-    width: 100%;
-}
-
-.hgroup { 
-	text-align: center;
-    margin-top: 220px;
-    margin-bottom: 22px;
-}
-
-#product-logo {
-    width: 220px;
-}
-
-#company-logo {
-    height: 30px; 
-}
-
-.slogan {
-    font-size: 13px;
-	letter-spacing: .4px;
-    color: #b3b3b3ff;
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-  text-align:center;
+.cdk-overlay-container{
+    position: absolute;
+    top: 0px;
 }

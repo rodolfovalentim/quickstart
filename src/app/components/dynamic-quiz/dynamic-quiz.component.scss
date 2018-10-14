@@ -1,0 +1,42 @@
+input {
+    visibility:hidden;
+}
+
+.nav .nav-fill .nav-item {
+    height: inherit;
+}
+
+.nav-pills .nav-link {
+    border-radius: 0;
+}
+
+.answered {
+    border-bottom-color: #1DA1F2;
+    border-bottom: 2px solid #1c94e0;
+    transition: all .15s ease-in-out;
+}
+
+.current {
+    border-bottom-color: rgb(29, 242, 100);
+    border-bottom: 2px solid rgb(29, 242, 100);
+    transition: all .15s ease-in-out;
+}
+
+
+.nav-link {
+    height: inherit;
+}
+
+
+ul {
+    height: inherit;
+}
+
+
+li  {
+    height: inherit;
+}
+
+input {
+    visibility:hidden;
+}

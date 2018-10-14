@@ -1,14 +1,9 @@
-<div class="card" style="margin:auto; margin-top:220px; width: 600px;">
-    <div class="card-header">
-      <h1 id="title" [ngStyle]="titleStyle">{{ title.getText() }}</h1>
-    </div>
-    <div class="card-body">
-    <app-dynamic-quiz 
-      [mode]="mode"
-      [questions]="questions"
-      [backEnable]="false"
-      [nextButton]="nextButton"
-      [finishButton]="finishButton">
-    </app-dynamic-quiz>
-  </div>
+<div class="container" style="margin:auto; margin-top:220px;">
+  <app-dynamic-quiz [questions]="questions" [backEnable]="backEnable" [nextButton]="nextButton" [finishButton]="finishButton"
+    [backEnable]="backEnable" [backButton]="backButton" [answerTextColor]="answerTextColor" [answerBoxColor]="answerBoxColor"
+    [answerSelectedBoxColor]="answerSelectedBoxColor" [containerColor]="containerColor" [nextButton]="nextButton"
+    [finishButton]="finishButton" [welcomeTitle]="welcomeTitle" [welcomeText]="welcomeText" [startButton]="startButton"
+    [successTitle]="successTitle" [successMessage]="successMessage" [failureTitle]="failureTitle" [failureMessage]="failureMessage"
+    [tryAgainButton]="tryAgainButton" [title]="title" [minPoints]='2' [answerSelectedTextColor]='red'>
+  </app-dynamic-quiz>
 </div>

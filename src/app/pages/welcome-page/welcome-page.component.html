@@ -1,5 +1,5 @@
 <div class="container content">
-    <div class="row" style="margin-top: 500px">
+    <div class="row" [ngStyle]=contentStyle>
         <div class="col-4"></div>
         <div class="col-4" style="text-align: center">
             <h1 [ngStyle]=title.getStyle()> {{ title.getText() }} </h1>
