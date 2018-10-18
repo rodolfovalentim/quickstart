@@ -4,8 +4,51 @@
       <h1 style="text-align:center" [ngStyle]="title.getStyle()">{{ title.getText() }}</h1>
     </div>
     <div class="card-body">
+      <!-- 
+      <div class="input-group mb-3 input-group-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <fa-icon [icon]="['fa', 'user']"></fa-icon>
+          </span>
+        </div>
+        <input type="text" class="form-control" placeholder="Nome">
+      </div>
+      <div class="input-group mb-3 input-group-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <fa-icon [icon]="['fa', 'phone']"></fa-icon>
+          </span>
+        </div>
+        <input type="text" class="form-control" placeholder="Telefone">
+      </div>
+      <div class="input-group mb-3 input-group-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <fa-icon [icon]="['fa', 'city']"></fa-icon>
+          </span>
+        </div>
+        <input type="text" class="form-control" placeholder="Cidade">
+      </div>
+      <div class="input-group mb-3 input-group-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <fa-icon [icon]="['fa', 'envelope']"></fa-icon>
+          </span>
+        </div>
+        <input type="text" class="form-control" placeholder="E-mail">
+      </div>
+      <div class="input-group mb-3 input-group-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <fa-icon [icon]="['fa', 'birthday-cake']"></fa-icon>
+          </span>
+        </div>
+        <input type="text" class="form-control" placeholder="Aniversário">
+      </div> -->
+
       <app-dynamic-form [questions]="questions" [skipEnable]="skipEnable" [btnSubmit]="btnSubmit" [btnSkip]="btnSkip">
       </app-dynamic-form>
+
     </div>
   </div>
 </div>

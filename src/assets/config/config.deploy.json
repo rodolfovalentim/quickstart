@@ -24,7 +24,7 @@
       "title": {
         "text": "",
         "color": "#00FF00",
-        "fontPath": "path/font/test.ttf",
+        "fontPath": null,
         "fontName": "Arial"
       },
       "button": {
@@ -33,7 +33,7 @@
         "text": {
           "text": "Começar!",
           "color": null,
-          "fontPath": "path/font/test.ttf",
+          "fontPath": null,
           "fontName": null
         }
       },
@@ -77,6 +77,10 @@
           "key": "name_key",
           "label": "Name",
           "type": "text",
+          "icon": [
+            "fa",
+            "user"
+          ],
           "order": 1
         },
         {
@@ -84,6 +88,10 @@
           "key": "phone_key",
           "label": "Phone",
           "type": "text",
+          "icon": [
+            "fa",
+            "phone"
+          ],
           "order": 1
         },
         {
@@ -91,6 +99,10 @@
           "key": "city_key",
           "label": "City",
           "type": "text",
+          "icon": [
+            "fa",
+            "building"
+          ],
           "order": 1
         },
         {
@@ -98,6 +110,10 @@
           "key": "email_key",
           "label": "Email",
           "type": "email",
+          "icon": [
+            "fa",
+            "at"
+          ],
           "order": 1
         },
         {
@@ -105,6 +121,10 @@
           "key": "birthday_key",
           "label": "Birthday",
           "type": "date",
+          "icon": [
+            "fa",
+            "calendar"
+          ],
           "order": 1
         }
       ]

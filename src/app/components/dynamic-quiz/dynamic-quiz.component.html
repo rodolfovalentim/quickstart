@@ -1,6 +1,16 @@
 <div *ngIf="stateMachine == 'welcome' ||  stateMachine == 'end'" class="card border-0">
   <div class="card-header">
-    <h1 style="text-align:center" [ngStyle]="title.getStyle()">{{ title.getText() }}</h1>
+    <span [ngSwitch]="msgType">
+      <h1 *ngSwitchCase="'success'" [ngStyle]="successTitle.getStyle()">
+        {{ successTitle.getText() }}
+      </h1>
+      <h1 *ngSwitchCase="'failure'" [ngStyle]="failureTitle.getStyle()">
+        {{ failureTitle.getText() }}
+      </h1>
+      <h1 *ngSwitchDefault [ngStyle]="welcomeTitle.getStyle()">
+        {{ welcomeTitle.getText() }}
+      </h1>
+    </span>
   </div>
   <div class="card-body">
     <div class="card-text">
@@ -27,7 +37,8 @@
       </div>
       <div *ngSwitchCase="'end'">
         <div class="btn-group d-flex" role="group" aria-label="...">
-          <button type="button" (click)="tryAgain()" class="btn btn-primary w-100" [ngStyle]="tryAgainButton.getStyle()">
+          <button type="button" *ngIf="msgType == 'failure'" (click)="tryAgain()" class="btn btn-primary w-100"
+            [ngStyle]="tryAgainButton.getStyle()">
             <fa-icon [icon]=tryAgainButton.getIcon()></fa-icon>
             {{ tryAgainButton.getText() }}
           </button>

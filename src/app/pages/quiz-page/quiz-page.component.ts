@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { ConfigService } from "../../services/config.service";
 import { Router } from '@angular/router';

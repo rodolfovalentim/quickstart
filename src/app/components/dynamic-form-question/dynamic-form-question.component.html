@@ -1,9 +1,13 @@
 <div [ngSwitch]="question.controlType" [formGroup]="form">
-  <div class="form-group row" *ngSwitchCase="'textbox'">
-    <label class="col-sm-2 col-form-label" [attr.for]="question.key">{{question.label}}</label>
-    <div class="col-sm-10">
-      <input class="form-control" [formControlName]="question.key" [id]="question.key" [matKeyboard]="question.keyboard">
+
+  <div *ngSwitchCase="'textbox'" class="form-group input-group mb-1 input-group-lg">
+    <div class="input-group-prepend">
+      <span class="input-group-text">
+        <fa-icon [icon]="question.icon"></fa-icon>
+      </span>
     </div>
+    <input type="text" class="form-control" [placeholder]="question.label" [formControlName]="question.key" [id]="question.key"
+      [matKeyboard]="question.keyboard">
   </div>
 
   <select [formGroup]="form" class="form-control" [id]="question.key" *ngSwitchCase="'dropdown'">

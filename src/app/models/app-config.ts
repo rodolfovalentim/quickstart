@@ -98,6 +98,7 @@ interface Question {
   placeholder?: string;
   order?: number;
   id?: number;
+  icon?: string[];
   question?: string;
   options?: Options[];
   answer: number;

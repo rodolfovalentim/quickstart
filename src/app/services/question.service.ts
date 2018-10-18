@@ -20,6 +20,7 @@ export class QuestionService {
             label: question.label,
             value: question.placeholder || "",
             required: true,
+            icon: question.icon,
             order: question.order
           })
         )
