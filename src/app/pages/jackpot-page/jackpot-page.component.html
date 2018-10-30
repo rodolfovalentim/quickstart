@@ -1,28 +1,58 @@
-<div class="container" style='background-color: blueviolet'>
-    <div class='row jackpot-wrapper' style='background-color: blue'>
-    <div class="odometer row">
-        <div class="col-sm">
-            <div *ngFor="let hero of sortImages" [@heroState]="state" class="digit digit-container digit-hundred img-wrapper">
-                <img src={{hero}} />
+<div class="container">
+    <div *ngIf="state != 'end'" class='row jackpot-wrapper '>
+        <div class="odometer row mx-auto">
+            <div class="col-sm">
+                <div *ngFor="let hero of slot1" [@heroState1]="state1" class="digit digit-container digit-hundred img-wrapper">
+                    <img [src]='hero' />
+                </div>
+            </div>
+            <div class="col-sm">
+                <div *ngFor="let hero of slot2" [@heroState2]="state2" class="digit digit-container digit-hundred img-wrapper">
+                    <img [src]='hero' />
+                </div>
+            </div>
+            <div class="col-sm">
+                <div *ngFor="let hero of slot3" [@heroState3]="state3" class="digit digit-container digit-hundred img-wrapper">
+                    <img [src]='hero' />
+                </div>
             </div>
         </div>
-        <div class="col-sm">
-            <div *ngFor="let hero of sortImages" [@heroState]="state" class="digit digit-container digit-hundred img-wrapper">
-                <img src={{hero}} />
-            </div>
-        </div>
-        <div class="col-sm">
-            <div *ngFor="let hero of sortImages" [@heroState]="state" class="digit digit-container digit-hundred img-wrapper">
-                <img src={{hero}} />
-            </div>
-        </div>     
     </div>
-  </div>
-  <div class="row" style="margin-top:10px; align-content: center; background-color: blue" >
-    <div class="col-sm">
-        <button mat-raised-button type="button" (click)="toggleState()">Pular</button>
-    </div>
-    <div class="col-sm">
-            <button mat-raised-button type="button" (click)="toggleState()">Pular</button>
+
+    <div *ngIf="state == 'end'" class="card" style="margin:auto; margin-top:220px; width: 840px;">
+        <div class="card-header">
+            <div *ngIf="prizes[prizeIdx] != 'PERDEU'">
+                {{ winTitle.getText() }}
+            </div>
+            <div *ngIf="prizes[prizeIdx] == 'PERDEU'">
+                {{ loseTitle.getText() }}
+            </div>
         </div>
+        <div class="card-body">
+            <div *ngIf="prizes[prizeIdx] != 'PERDEU'">
+                {{ winText.getText() }}
+            </div>
+            <div *ngIf="prizes[prizeIdx] == 'PERDEU'">
+                {{ loseText.getText() }}
+            </div>
+        </div>
+    </div>
+
+    <div class="btn-group d-flex mx-auto" role="group" aria-label="..." style="margin-top:10px; align-content: center;">
+
+        <button *ngIf="state != 'end'" type="button" (click)="toggleState()" class="btn btn-primary w-100" [ngStyle]="spinButton.getStyle()">
+            <fa-icon [icon]=spinButton.getIcon()></fa-icon>
+            {{ spinButton.getText() }}
+        </button>
+
+        <button *ngIf="state == 'end'" type="button" (click)="tryAgain()" class="btn btn-primary w-100" [ngStyle]="tryAgainButton.getStyle()">
+            <fa-icon [icon]=tryAgainButton.getIcon()></fa-icon>
+            {{ tryAgainButton.getText() }}
+        </button>
+
+        <button *ngIf="state == 'end'" type="button" (click)="toNext()" class="btn btn-primary w-100" [ngStyle]="finishButton.getStyle()">
+            <fa-icon [icon]=finishButton.getIcon()></fa-icon>
+            {{ finishButton.getText() }}
+        </button>
+    </div>
 </div>

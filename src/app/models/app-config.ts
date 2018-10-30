@@ -35,6 +35,7 @@ interface Screen {
   shuffle?: boolean;
   enableScore?: boolean;
   numPresentedQuestions?: number;
+  minScore?: number;
   questions?: Question[];
   spinButton?: SpinButton;
   winText?: Text;
@@ -61,7 +62,7 @@ interface Screen {
   askBirthday?: boolean;
 }
 
-interface Frame {
+export interface Frame {
   id?: any;
   path: string;
   cropFrom: CropFrom;
@@ -75,7 +76,7 @@ interface CropFrom {
   h: number;
 }
 
-interface Slot {
+export interface Slot {
   id?: any;
   imagePath: string;
   prize: string;

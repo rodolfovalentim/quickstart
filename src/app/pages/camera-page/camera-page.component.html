@@ -1,5 +1,13 @@
 <div class="card" style="margin:auto; margin-top:220px; width: 800px;">
-    <div class="card-body" style="text-align: center; overflow: hidden;">
+    <div *ngIf="state == 'take' || state == 'show'" class="card-header p-0 bg-transparent">
+        <ul class="nav nav-tabs nav-fill">
+            <li class="nav-item" *ngFor="let item of frames; let i=index">
+                <button class="button nav-link w-100 h-100 p-3" (click)="selectFrame(i)">{{ 'Moldura ' + i }}</button>
+            </li>
+        </ul>
+    </div>
+
+    <div *ngIf="state == 'take'" class="card-body" style="text-align: center; overflow: hidden;">
         <div [hidden]="countdown == 0 || countdown == 4" class="animated pulse infinite countdown">
             {{countdown}}
         </div>
@@ -7,24 +15,29 @@
             <webcam (imageCapture)="handleImage($event)" [trigger]="triggerObservable" [width]="1080" [height]="720">
             </webcam>
         </div>
-        <img id="photo_frame" src="./assets/images/moldura.png">
+        <img id="photo_frame" [src]="frames[currentFrame].path">
+    </div>
+
+    <div class="card-body" *ngIf="state == 'show'" class="card-body" style="text-align: center; overflow: hidden;">
+        <div id=webcam_wrapper>
+            <img [width]="1080" [height]="720" [src]="picture.imageAsDataUrl" />
+        </div>
+        <img id="photo_frame" [src]="frames[currentFrame].path">
+    </div>
+
+    <div class="card-body" *ngIf="state == 'end'" class="card-body" style="text-align: center; overflow: hidden;">
+        <p [ngStyle]="thankyouMessage.getStyle()">
+            {{ thankyouMessage.getText() }}
+        </p>
     </div>
 
     <div class="card-footer">
         <div class="btn-group d-flex" role="group" aria-label="...">
-            <button type="button" class="btn btn-primary w-100" (click)="triggerSnapshot()">
-                <!-- <fa-icon [icon]=backButton.getIcon()></fa-icon> -->
-                Take
-            </button>
-            <button type="submit" class="btn btn-primary w-100" (click)="printPicture()">
-                <!-- <fa-icon [icon]=finishButton.getIcon()></fa-icon> -->
-                Print
-            </button>
+            <app-pg-button class='w-100' [btn]='backBtn' (click)="triggerSnapshot()"></app-pg-button>
+            <app-pg-button *ngIf="state == 'take'" class='w-100' [btn]='takePicBtn' (click)="triggerSnapshot()"></app-pg-button>
+            <app-pg-button *ngIf="state == 'show'" class='w-100' [btn]='takeNewPicBtn' (click)="triggerSnapshot()"></app-pg-button>
+            <app-pg-button *ngIf="state == 'show'" class='w-100' [btn]='confirmBtn' (click)="thanks()"></app-pg-button>
+            <app-pg-button *ngIf="state == 'end'" class='w-100' [btn]='confirmBtn' (click)="finish()"></app-pg-button>
         </div>
-        <!-- <button mat-raised-button color="warn" class="take-picture" (click)="confirm_picture == '' ? triggerSnapshot() : printPicture()">
-            <fa-icon [hidden]="confirm_picture != ''" [icon]=takePicBtnIcon></fa-icon>
-            <fa-icon [hidden]="confirm_picture == ''" [icon]=takeNewPicBtnIcon></fa-icon>
-            {{confirm_picture == '' ? takePicBtnText : confirmBtnText}}
-        </button> -->
     </div>
 </div>

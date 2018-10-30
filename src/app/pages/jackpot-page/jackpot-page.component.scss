@@ -1,9 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~compass-mixins/lib/compass/css3';
 
-// $unit-of-speed: 50ms; // crazy fast
-// $unit-of-speed: 50ms; // normal
-$unit-of-speed: 50ms; // boring
+  $unit-of-speed: 50ms; // boring
 
 @mixin odometer-styling () {
   @include text-shadow(0 -1px rgba(0, 0, 
@@ -29,7 +27,7 @@ $unit-of-speed: 50ms; // boring
 
 .odometer {
   position: relative;
-  left: 135px;
+  // left: 135px;
   top: 18px;
   width: 840px;
   height: 200px;
@@ -47,13 +45,13 @@ $unit-of-speed: 50ms; // boring
 .digit {
   display: inline-block;
   overflow: hidden;
-  
   @include digit-styling();
 }
 
 .img-wrapper {
   width: 280px;
   height: 200px;
+  background: #222;
 }
 
 img {
@@ -65,17 +63,21 @@ button {
   width: inherit;
 }
 
+.btn-group {
+  width: 840px;
+}
+
 .jackpot-wrapper {
   margin-top: 309px;
   // margin-left: 295px;
   // width: 1064px;
   height: 250px;
-  background-repeat: no-repeat;
-  background-image: url("../../../assets/images/jackpot/jackpot.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+  // background-repeat: no-repeat;
+  // background-image: url("../../../assets/images/jackpot/jackpot.png");
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // position: relative;
 }
 
 button {

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ViewChild } from '@angular/core';
-import { WebcamImage, WebcamInitError, WebcamUtil} from 'ngx-webcam';
+import { WebcamImage, WebcamInitError, WebcamUtil } from 'ngx-webcam';
 import { Subject } from 'rxjs';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
@@ -8,6 +8,15 @@ import { PageBaseComponent } from '../../components/page-base/page-base.componen
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { timeout } from 'q';
 import { ConfigService } from "../../services/config.service";
+import { TextModel } from '../../models/text-model';
+import { ButtonModel } from '../../models/button-model';
+
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
+import { Frame } from 'src/app/models/app-config';
+
+library.add(fas, far);
 
 @Component({
   selector: 'app-camera-page',
@@ -16,96 +25,62 @@ import { ConfigService } from "../../services/config.service";
 })
 export class CameraPageComponent extends PageBaseComponent {
 
-  @ViewChild('videoElement') videoElement: any;
-  video: any;
-  picture : WebcamImage;
+  @ViewChild('videoElement') videoElement: any
+  video: any
+  picture: WebcamImage
 
   // webcam snapshot trigger
-  private trigger: Subject<void> = new Subject<void>();
-  confirm_picture : String = '';
-  selectedFrame : number;
-  countdown : number
+  private trigger: Subject<void> = new Subject<void>()
+  confirm_picture: string = ''
+  selectedFrame: number
+  countdown: number
 
-  nextPage = "";
+  takePicBtn: ButtonModel
+  takeNewPicBtn: ButtonModel
+  backBtn: ButtonModel
+  confirmBtn: ButtonModel
+  thankyouMessage: TextModel
 
-  takePicBtnText: string;
-  takeNewPicBtnText: string;
-  backBtnText: string;
+  frames: Frame[]
+  currentFrame: number
 
-  takePicBtnIcon: string[];
-  takeNewPicBtnIcon: string[];
-  backBtnIcon: string[];
-  
-  takePicBtnStyle: any;
-  takeNewPicBtnStyle: any;
-  backBtnStyle: any;
-  
-  confirmBtnText: string;
-  confirmBtnIcon: string[];
-  confirmBtnStyle: any;
-
-  thankyouMensage: string;
+  state: string
 
   constructor(
     private config: ConfigService,
     private router: Router) {
 
     super("camera", config);
+
     this.confirm_picture = ''
+    this.state = "take"
 
-    this.takePicBtnText = this.pageInfo.takePicButton.text.text || "Tirar foto";
-    this.takePicBtnIcon = this.pageInfo.takePicButton.icon.split("-") || ["far", "home"]
-    this.takePicBtnStyle = {
-      'background-color': this.pageInfo.takePicButton.color || "red",
-      'color': this.pageInfo.takePicButton.text.color || "#000",
-      'font-family': this.pageInfo.takePicButton.text.fontName || "serif"
-    }
-
-    this.takeNewPicBtnText = this.pageInfo.takeNewPicButton.text.text || "Tira outra foto";
-    this.takeNewPicBtnIcon = this.pageInfo.takeNewPicButton.icon.split("-") || ["far", "home"]
-    this.takeNewPicBtnStyle = {
-      'background-color': this.pageInfo.takeNewPicButton.color || "red",
-      'color': this.pageInfo.takeNewPicButton.text.color || "#000",
-      'font-family': this.pageInfo.takeNewPicButton.text.fontName || "serif"
-    }
-
-    this.backBtnText = this.pageInfo.takeNewPicButton.text.text || "Tira outra foto";
-    this.backBtnIcon = this.pageInfo.backButton.icon.split("-") || ["far", "home"]
-    this.backBtnStyle = {
-      'background-color': this.pageInfo.backButton.color || "red",
-      'color': this.pageInfo.backButton.text.color || "#000",
-      'font-family': this.pageInfo.backButton.text.fontName || "serif"
-    }
-
-    this.confirmBtnText = this.pageInfo.confirmButton.text.text || "Tira outra foto";
-    this.confirmBtnIcon = this.pageInfo.confirmButton.icon.split("-") || ["far", "home"]
-    this.confirmBtnStyle = {
-      'background-color': this.pageInfo.confirmButton.color || "red",
-      'color': this.pageInfo.confirmButton.text.color || "#000",
-      'font-family': this.pageInfo.confirmButton.text.fontName || "serif"
-    }
-
-    this.thankyouMensage = this.pageInfo.thankyouMensage.text;
-    this.nextPage = this.pageInfo.next;
+    this.takePicBtn = new ButtonModel(this.pageInfo.takePicButton)
+    this.takeNewPicBtn = new ButtonModel(this.pageInfo.takeNewPicButton)
+    this.backBtn = new ButtonModel(this.pageInfo.backButton)
+    this.confirmBtn = new ButtonModel(this.pageInfo.confirmButton)
+    this.thankyouMessage = new TextModel(this.pageInfo.thankyouMensage)
+    this.frames = this.pageInfo.frames
+    this.currentFrame = 0
   }
 
-  public triggerSnapshot(): void {    
+  public triggerSnapshot(): void {
     this.confirm_picture = ''
     this.countdown = 3;
     this.decrementCountdown()
   }
 
-  decrementCountdown(){
+  decrementCountdown() {
     setTimeout(() => {
       this.countdown = this.countdown - 1
       if (this.countdown > 0)
         this.decrementCountdown()
-      else{
+      else {
         setTimeout(() => {
           this.countdown = 4
           this.trigger.next();
         }, 300);
-      }           
+      }
     }, 1000);
   }
 
@@ -114,14 +89,13 @@ export class CameraPageComponent extends PageBaseComponent {
   }
 
   public handleImage(webcamImage: WebcamImage): void {
-    
     this.picture = webcamImage;
-    console.log(this.picture.imageAsDataUrl)
+    console.log(this.picture)
     this.confirm_picture = this.picture.imageAsDataUrl
-    this.router.navigateByUrl(this.next);
-  } 
+    this.state = "show"
+  }
 
-  public printPicture(){
+  public printPicture() {
     // this.http.post('http://localhost:8080/agazeta/camera/foto', {'base64':this.picture.imageAsDataUrl, frame : this.selectedFrame})
     //   .pipe()
     //   .subscribe(response => {
@@ -129,9 +103,15 @@ export class CameraPageComponent extends PageBaseComponent {
     //   })
   }
 
-  goToWelcome(){
-    document.location.href = 'http://localhost:8080/agazeta/intro';
+  selectFrame(frameNumber) {
+    this.currentFrame = frameNumber
   }
 
+  thanks() {
+    this.state = "end"
+  }
 
+  finish() {
+    this.router.navigateByUrl(this.next);
+  }
 }

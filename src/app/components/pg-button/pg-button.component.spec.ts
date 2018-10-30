@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DynamicQuizComponent } from './dynamic-quiz.component';
+import { PgButtonComponent } from './pg-button.component';
 
-describe('DynamicQuizComponent', () => {
-  let component: DynamicQuizComponent;
-  let fixture: ComponentFixture<DynamicQuizComponent>;
+describe('PgButtonComponent', () => {
+  let component: PgButtonComponent;
+  let fixture: ComponentFixture<PgButtonComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DynamicQuizComponent ]
+      declarations: [ PgButtonComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DynamicQuizComponent);
+    fixture = TestBed.createComponent(PgButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -132,7 +132,7 @@
     {
       "id": null,
       "screenType": "quiz",
-      "next": "camera",
+      "next": "jackpot",
       "title": {
         "text": "Titulo do quiz",
         "color": "#334455",
@@ -222,6 +222,7 @@
       "shuffle": true,
       "enableScore": true,
       "numPresentedQuestions": 2,
+      "minScore": 2,
       "questions": [
         {
           "id": 1,
@@ -249,7 +250,7 @@
           ]
         },
         {
-          "id": 2,
+          "id": 4,
           "questionLabel": null,
           "question": "Qual destes é filho de puta?",
           "questionType": "radio",
@@ -339,7 +340,7 @@
         "icon": "far-calendar",
         "text": {
           "text": "Rodar",
-          "color": "#234234",
+          "color": "#123123",
           "fontPath": null,
           "fontName": "Tahoma"
         }
@@ -348,8 +349,8 @@
         "color": null,
         "icon": "far-calendar",
         "text": {
-          "text": "Rodar",
-          "color": "#234234",
+          "text": "Rodar novamente",
+          "color": "#123123",
           "fontPath": null,
           "fontName": "Tahoma"
         }
@@ -367,13 +368,13 @@
         "fontName": "Arial"
       },
       "winTitle": {
-        "text": "Tente novamente mais tarde. Aproveite e tire uma foto",
+        "text": "Você ganhou!",
         "color": "#123123",
         "fontPath": null,
         "fontName": "Arial"
       },
       "loseTitle": {
-        "text": "Tente novamente mais tarde. Aproveite e tire uma foto",
+        "text": "Você perdeu...",
         "color": "#123123",
         "fontPath": null,
         "fontName": "Arial"
@@ -381,23 +382,23 @@
       "slots": [
         {
           "id": null,
-          "imagePath": "logo_bone.png",
+          "imagePath": "./assets/images/jackpot/slot-1.png",
           "prize": "BONÉ",
-          "probability": 0.7,
+          "probability": 0.2,
           "avaliableAmount": 500
         },
         {
           "id": null,
-          "imagePath": "logo_carro.png",
+          "imagePath": "./assets/images/jackpot/slot-2.png",
           "prize": "CARRO",
-          "probability": 0.1,
+          "probability": 0.2,
           "avaliableAmount": 5
         },
         {
           "id": null,
-          "imagePath": "logo_aviao.png",
+          "imagePath": "./assets/images/jackpot/slot-3.png",
           "prize": "AVIÃO",
-          "probability": 0.1,
+          "probability": 0.2,
           "avaliableAmount": 2
         }
       ],
@@ -413,11 +414,11 @@
       },
       "screenType": "camera",
       "next": "end",
-      "backgroundPath": "assets/images/background.png",
+      "backgroundPath": "./assets/images/background.png",
       "frames": [
         {
           "id": null,
-          "path": "logo_frame1.png",
+          "path": "./assets/images/moldura.png",
           "cropFrom": {
             "x": 30,
             "y": 40,
@@ -433,7 +434,7 @@
         },
         {
           "id": null,
-          "path": "logo_frame2.png",
+          "path": "./assets/images/moldura2.png",
           "cropFrom": {
             "x": 310,
             "y": 410,

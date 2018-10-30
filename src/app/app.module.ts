@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule }   from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'; 
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { WebcamModule } from 'ngx-webcam';
 import { FormWizardModule } from 'angular2-wizard';
 import { ReactiveFormsModule } from '@angular/forms'
@@ -40,8 +40,8 @@ import { ConfigService } from './services/config.service';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PageBaseComponent } from './components/page-base/page-base.component';
-import { DynamicQuizComponent } from './components/dynamic-quiz/dynamic-quiz.component';
 import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
+import { PgButtonComponent } from './components/pg-button/pg-button.component';
 
 export function initializeApp(appConfig: ConfigService) {
   return () => appConfig.load();
@@ -74,10 +74,10 @@ const customLayouts: IKeyboardLayouts = {
     QuizPageComponent,
     WelcomePageComponent,
     DynamicFormComponent,
-    DynamicQuizComponent,
     DynamicFormQuestionComponent,
     PageBaseComponent,
-    EndPageComponent
+    EndPageComponent,
+    PgButtonComponent
   ],
   imports: [
     BrowserModule,
@@ -101,8 +101,8 @@ const customLayouts: IKeyboardLayouts = {
     FontAwesomeModule,
     SplitButtonModule
   ],
-  providers: [ AuthGuardService, {provide: MAT_KEYBOARD_LAYOUTS, useValue: customLayouts}, 
+  providers: [AuthGuardService, { provide: MAT_KEYBOARD_LAYOUTS, useValue: customLayouts },
     ConfigService, { provide: APP_INITIALIZER, useFactory: initializeApp, deps: [ConfigService], multi: true }],
-  bootstrap: [ AppComponent ]
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

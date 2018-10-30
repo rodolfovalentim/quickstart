@@ -8,27 +8,30 @@ export class ButtonModel {
 
     constructor(json: Button) {
         this.text = new TextModel(json.text)
-        this.style = { 'background-color' : json.color || "", "border-color": json.color }
-        this.icon = json.icon.split("-") || ["fa", "question"]
+        this.style = { 'background-color': json.color || "", "border-color": json.color }
+        let iconArray = json.icon.split("-")
+        let iconType = String(iconArray.shift())
+        let iconElem = iconArray.join("-")
+        this.icon = [iconType, iconElem] || ["fa", "question"]
     }
 
-    getText(){
+    getText() {
         return this.text.getText()
     }
 
-    getButtonText(){
+    getButtonText() {
         return this.text.getText()
     }
 
-    getButtonTextStyle(){
+    getButtonTextStyle() {
         return this.text.getStyle()
     }
 
-    getStyle(){
+    getStyle() {
         return this.style
     }
 
-    getIcon(){
+    getIcon() {
         return this.icon
     }
 }
